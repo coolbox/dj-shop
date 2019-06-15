@@ -1,0 +1,13 @@
+# https://rubocop.readthedocs.io/en/latest/cops_style/
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: always
+Style/SymbolArray:
+  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+Style/Documentation:
+  Enabled: false
+Metrics/AbcSize:
+  Max: 20
