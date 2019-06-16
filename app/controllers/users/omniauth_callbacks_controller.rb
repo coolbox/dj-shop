@@ -5,6 +5,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def spotify
     @user = User.from_omniauth(@auth)
+    @user.update_spotify_auth(@auth)
     sign_in_and_redirect @user, event: :authentication
   end
 

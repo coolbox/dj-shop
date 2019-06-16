@@ -9,16 +9,21 @@ class User < ApplicationRecord
          omniauth_providers: [:spotify]
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid.to_s).first_or_create do |user|
-      user.omniauth_token = auth.credentials.token
-      user.refresh_token = auth.credentials.refresh_token
-      user.expires_at = auth.credentials.expires_at
-      user.expires = auth.credentials.expires
-      user.name = auth.info.name
-      user.nickname = auth.info.nickname
-      user.email = auth.info.email
-      user.image = auth.info.image
-      user.follower_count = auth.info.follower_count
-    end
+    where(provider: auth.provider, uid: auth.uid.to_s).first_or_create
+  end
+
+  def update_spotify_auth(auth)
+    logger.error "@@@@@@@@@@@@@ #{auth.credentials.token} - #{auth.credentials.refresh_token}, #{auth.inspect}"
+    update(
+      omniauth_token: auth.credentials.token,
+      refresh_token: auth.credentials.refresh_token,
+      expires_at: auth.credentials.expires_at,
+      expires: auth.credentials.expires,
+      name: auth.info.name,
+      nickname: auth.info.nickname,
+      email: auth.info.email,
+      image: auth.info.image,
+      follower_count: auth.info.follower_count
+    )
   end
 end
