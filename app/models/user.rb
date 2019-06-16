@@ -13,7 +13,7 @@ class User < ApplicationRecord
   end
 
   def update_spotify_auth(auth)
-    logger.error "@@@@@@@@@@@@@ #{auth.credentials.token} - #{auth.credentials.refresh_token}, #{auth.inspect}"
+    # raise auth.inspect
     update(
       omniauth_token: auth.credentials.token,
       refresh_token: auth.credentials.refresh_token,
@@ -25,5 +25,9 @@ class User < ApplicationRecord
       image: auth.info.image,
       follower_count: auth.info.follower_count
     )
+  end
+
+  def access_token_expired?
+    (Time.zone.now - updated_at) > 3300
   end
 end

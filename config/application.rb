@@ -18,8 +18,11 @@ module DjShop
 
     # Load application services
     # config.autoload_paths << "#{Rails.root}/lib"
-    config.autoload_paths += %W(#{config.root}/lib)
-    config.autoload_paths += %W(#{config.root}/app)
+    config.autoload_paths += %W(
+      #{config.root}/lib
+      #{config.root}/app
+    )
     config.eager_load_paths << "#{config.root}/lib"
+    config.eager_load_paths << "#{config.root}/app"
   end
 end

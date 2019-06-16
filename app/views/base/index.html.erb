@@ -2,3 +2,12 @@
   "Sign in with Strava",
   user_spotify_omniauth_authorize_path(redirect_uri: root_url)
 ) %>
+
+<ul>
+  <%= @playlists.each do |p| %>
+    <li>
+      <%= image_tag p["images"][0]["url"], width: 100, height: 100 %>
+      <%= p["name"] %>
+    </li>
+  <% end %>
+</ul>
