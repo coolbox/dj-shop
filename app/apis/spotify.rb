@@ -55,6 +55,18 @@ class Apis::Spotify
     return_or_raise_response(response)
   end
 
+  def playlist(playlist_id)
+    endpoint = "/playlists/#{playlist_id}"
+
+    response = with_http_retries do
+      HTTParty.get(
+        api_endpoint_url(endpoint),
+        headers: @headers
+      )
+    end
+    return_or_raise_response(response)
+  end
+
   def current_user
     @current_user ||= User.find_by(uid: @user_uid)
   end

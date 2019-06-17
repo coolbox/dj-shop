@@ -15,4 +15,6 @@ Rails.application.routes.draw do
     get "login", to: "devise/sessions#new", as: :new_user_session
     get "logout", to: "devise/sessions#destroy", as: :destroy_user_session
   end
+
+  resources :playlists, only: [:show]
 end
