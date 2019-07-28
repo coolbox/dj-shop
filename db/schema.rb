@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_15_192230) do
+ActiveRecord::Schema.define(version: 2019_06_18_204032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "tracks", force: :cascade do |t|
+    t.string "spotify_id", null: false
+    t.string "artist_name"
+    t.string "track_name"
+    t.string "itunes_url"
+    t.string "spotify_url"
+    t.string "spotify_image_url"
+    t.integer "duration_ms"
+    t.string "release_date"
+    t.string "release_date_precision"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["spotify_id"], name: "index_tracks_on_spotify_id", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"

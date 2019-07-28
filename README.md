@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Affiliate programmes
+### iTunes
+https://autolinkmaker.itunes.apple.com/gb
+Docs - https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/#searchexamples
