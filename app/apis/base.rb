@@ -6,7 +6,7 @@ class Apis::Base
   include HttpRetrier
   class HttpError < StandardError; end
 
-  attr_reader :api_base_url
+  attr_reader :api_base_url, :default_params
 
   def initialize
     @api_base_url = self.class::API_URL
@@ -16,6 +16,10 @@ class Apis::Base
 
   def api_endpoint_url(endpoint)
     api_base_url + endpoint
+  end
+
+  def hash_to_url_params_string(params)
+    URI.encode_www_form(params.map { |key, value| [key, value] })
   end
 
   def return_or_raise_response(response, current_method)
