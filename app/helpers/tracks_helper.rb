@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TracksHelper
   def time_as_str(ms)
     secs, ms = ms.divmod(1000)
@@ -18,5 +20,9 @@ module TracksHelper
     format = "%Y"
     format = "%Y-%m-%d" if release_date_precision == "day"
     Time.zone.strptime(release_date, format).to_date.strftime("%d/%m/%Y")
+  end
+
+  def amazon_url_helper(artist_name, track_name)
+    link_to("Amazon", "#", type: :amzn, search: "#{artist_name} #{track_name}")
   end
 end

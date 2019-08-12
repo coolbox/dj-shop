@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
   def spotify_client
     return unless current_user
 
-    @spotify_client ||= Apis::Spotify.new(current_user.uid)
+    @spotify_client ||= SpotifyApi.new(current_user.uid)
   end
 end

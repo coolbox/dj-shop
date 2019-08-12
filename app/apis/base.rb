@@ -26,10 +26,11 @@ class Apis::Base
     if successful_response?(response.code)
       parse_response_body(response, current_method)
     else
-      raise(
-        Apis::Base::HttpError,
+      Rails.logger.error(
+        "Apis::Base::HttpError "\
         "#{self.class}.#{current_method}: #{response.code} #{response.body}"
       )
+      nil
     end
   end
 

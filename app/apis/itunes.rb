@@ -14,6 +14,13 @@ class Itunes < Apis::Base
     response = with_http_retries do
       HTTParty.get(api_endpoint_url(endpoint), query: query)
     end
-    return_or_raise_response(response, __method__)
+
+    response = return_or_raise_response(response, __method__)
+    return nil if response.blank?
+
+    results = response["results"]
+    return nil if results.empty?
+
+    results
   end
 end

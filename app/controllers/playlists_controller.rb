@@ -3,9 +3,10 @@
 class PlaylistsController < ApplicationController
   def show
     @playlist = @spotify_client.playlist(params[:id])
-    @tracks = Track.save_and_find_by_spotify_tracks(
-      @playlist["tracks"]["items"]
-    )
+
+    spotify_tracks = @playlist["tracks"]["items"]
+    Track.create_from_spotify(spotify_tracks)
+    @tracks = Track.where(spotify_id: spotify_tracks.map { |t| t["track"]["id"] })
 
     respond_to do |format|
       format.html
