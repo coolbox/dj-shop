@@ -2,21 +2,17 @@
 
 class PlaylistsController < ApplicationController
   def index
-    @playlists = @spotify_client.user_playlists["items"] if current_user
+    @playlists = current_user ? @spotify_client.user_playlists["items"] : []
 
-    respond_to do |format|
-      format.json do
-        render json: {
-          playlists: @playlists.map do |p|
-            {
-              id: p["id"],
-              cover_url: p["images"][0]["url"],
-              name: p["name"]
-            }
-          end
+    render json: {
+      playlists: @playlists.map do |p|
+        {
+          id: p["id"],
+          cover_url: p["images"][0]["url"],
+          name: p["name"]
         }
       end
-    end
+    }
   end
 
   def show

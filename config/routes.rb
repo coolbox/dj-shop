@@ -3,9 +3,6 @@ require "sidekiq/web"
 
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  root to: "playlists#index", defaults: { format: :json }
-
   devise_for :users,
              only: :omniauth_callbacks,
              controllers: {
@@ -17,7 +14,11 @@ Rails.application.routes.draw do
     get "logout", to: "devise/sessions#destroy", as: :destroy_user_session
   end
 
-  resources :playlists, only: [:index, :show], defaults: { format: :json }
+  scope "/api" do
+    scope "/v1" do
+      resources :playlists, only: [:index, :show], defaults: { format: :json }
+    end
+  end
 
-  mount Sidekiq::Web => '/sidekiq'
+  mount Sidekiq::Web => "/sidekiq"
 end

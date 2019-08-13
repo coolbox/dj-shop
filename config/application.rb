@@ -26,5 +26,8 @@ module DjShop
     )
     config.eager_load_paths << "#{config.root}/lib"
     config.eager_load_paths << "#{config.root}/app"
+
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
   end
 end
