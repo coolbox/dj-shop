@@ -2,6 +2,8 @@
 require "sidekiq/web"
 
 Rails.application.routes.draw do
+  root to: "playlists#index"
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :users,
              only: :omniauth_callbacks,
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
 
   scope "/api" do
     scope "/v1" do
+      resources :login, only: [:new], defaults: { format: :json }
       resources :playlists, only: [:index, :show], defaults: { format: :json }
     end
   end
