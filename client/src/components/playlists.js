@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 class Playlists extends Component {
   constructor () {
@@ -34,7 +35,7 @@ class Playlists extends Component {
         {this.state.playlists.map(function (playlist, i) {
           return (
             <li key={playlist.id}>
-              <a href={`/playlists/${playlist.id}`}>
+              <Link to={`/playlists/${playlist.id}`}>
                 <img
                   src={playlist.cover_url}
                   alt={playlist.name}
@@ -42,7 +43,7 @@ class Playlists extends Component {
                   height='250'
                 />
                 <h1>{playlist.name}</h1>
-              </a>
+              </Link>
             </li>
           )
         })}

@@ -23,17 +23,13 @@ class PlaylistsController < ApplicationController
       spotify_id: spotify_tracks.map { |t| t["track"]["id"] }
     )
 
-    respond_to do |format|
-      format.json do
-        render json: {
-          playlist: {
-            name: @playlist["name"],
-            cover_url: @playlist["images"][0]["url"],
-            description: @playlist["description"]
-          },
-          tracks: @tracks
-        }
-      end
-    end
+    @playlist = {
+      name: @playlist["name"],
+      cover_url: @playlist["images"][0]["url"],
+      description: @playlist["description"],
+      tracks: @tracks
+    }
+
+    render json: @playlist
   end
 end
