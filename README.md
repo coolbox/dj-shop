@@ -41,4 +41,5 @@ Docs - https://affiliate.itunes.apple.com/resources/documentation/itunes-store-w
 🚫 Bandcamp
 
 ## Design inspiration
+Cards: https://dribbble.com/shots/4155955-Cards-UI-Exploration
 Tracks: https://uimovement.com/design/customize-your-music/
