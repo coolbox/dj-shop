@@ -27,3 +27,18 @@ Things you may want to cover:
 ### iTunes
 https://autolinkmaker.itunes.apple.com/gb
 Docs - https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/#searchexamples
+
+### Google
+🚫 Google play - https://www.google.com/adsense/start/#!#%2Fsourceid=aso&subid=us-en-et-gancr%3Fmodal_active=none
+
+## Providers
+🚫Boomkat
+✅Junodownload
+🚫 whatpeopleplay.com
+🚫 https://www.traxsource.com/
+🚫 https://bleep.com
+🚫 7digital - https://merchant.skimlinks.com/network/543/7digital-affiliate-program/rates
+🚫 Bandcamp
+
+## Design inspiration
+Tracks: https://uimovement.com/design/customize-your-music/

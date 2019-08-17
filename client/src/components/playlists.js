@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import pluralize from "pluralize";
 
 class Playlists extends Component {
   constructor () {
@@ -36,13 +37,16 @@ class Playlists extends Component {
           return (
             <li key={playlist.id}>
               <Link to={`/playlists/${playlist.id}`}>
+                <h1>{playlist.name}</h1>
+              </Link>
+                <h3>{playlist.track_count} {pluralize('song', playlist.track_count)}</h3>
+              <Link to={`/playlists/${playlist.id}`}>
                 <img
                   src={playlist.cover_url}
                   alt={playlist.name}
                   width='250'
                   height='250'
                 />
-                <h1>{playlist.name}</h1>
               </Link>
             </li>
           )

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Track from '.././components/track';
+import Breadcrumbs from '.././components/breadcrumbs';
 
 class Playlist extends Component {
   constructor () {
@@ -27,9 +29,31 @@ class Playlist extends Component {
   }
 
   render() {
-    if (this.state.playlist){
+    const playlist = this.state.playlist
+    if (playlist){
+      const songString = playlist.tracks.length > 1 ? "songs" : "song"
+
       return (
-        <h1>{this.state.playlist.name}</h1>
+        <div className='playlist'>
+          <Breadcrumbs playlist={playlist} />
+          <h3>Playlist</h3>
+          <h1>{playlist.name}</h1>
+          <img
+            src={playlist.cover_url}
+            alt={playlist.name}
+            width='250'
+            height='250'
+          />
+          <h2>Tracks</h2>
+          <h2>{playlist.tracks.length} {songString}</h2>
+          <ol>
+            {playlist.tracks.map((track, i) => (
+              <li key={track.id}>
+                <Track track={track} />
+              </li>
+            ))}
+          </ol>
+        </div>
       )
     } else {
       return (

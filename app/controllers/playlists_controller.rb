@@ -4,11 +4,7 @@ class PlaylistsController < ApplicationController
   def index
     @playlists = current_user ? @spotify_client.user_playlists["items"] : []
     @playlists = @playlists.map do |p|
-      {
-        id: p["id"],
-        cover_url: p["images"][0]["url"],
-        name: p["name"]
-      }
+      playlist_attributes(p)
     end
 
     render json: @playlists
@@ -23,13 +19,21 @@ class PlaylistsController < ApplicationController
       spotify_id: spotify_tracks.map { |t| t["track"]["id"] }
     )
 
-    @playlist = {
-      name: @playlist["name"],
-      cover_url: @playlist["images"][0]["url"],
-      description: @playlist["description"],
-      tracks: @tracks
-    }
+    @playlist = playlist_attributes(@playlist).merge(tracks: @tracks)
 
     render json: @playlist
+  end
+
+  private
+
+  def playlist_attributes(spotify_playlist_object)
+    p = spotify_playlist_object
+    {
+      id: p["id"],
+      spotify_url: p["uri"],
+      cover_url: p["images"][0]["url"],
+      name: p["name"],
+      track_count: p["tracks"]["total"]
+    }
   end
 end
