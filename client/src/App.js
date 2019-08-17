@@ -11,7 +11,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <form>
-            <button formAction="http://localhost:5100/api/v1/login/new">Log in</button>
+            <button formAction="/api/v1/login/new">Log in</button>
           </form>
 
           <Route exact path={`/playlists`} component={Playlists} />
