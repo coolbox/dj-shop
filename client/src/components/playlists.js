@@ -16,7 +16,17 @@ class Playlists extends Component {
   }
 
   fetch (endpoint) {
-    return window.fetch(endpoint)
+    const jwt = sessionStorage.getItem('jwt');
+    const headers =  {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer: ${jwt}`
+    }
+
+    return window.fetch(endpoint, {
+        method: 'GET',
+        headers: headers
+      })
       .then(response => response.json())
       .catch(error => console.log(error))
   }

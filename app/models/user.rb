@@ -13,7 +13,6 @@ class User < ApplicationRecord
   end
 
   def update_spotify_auth(auth)
-    # raise auth.inspect
     update(
       omniauth_token: auth.credentials.token,
       refresh_token: auth.credentials.refresh_token,

@@ -21,6 +21,7 @@ class Track extends Component {
               href={track.itunes_url}
               title={`${track.track_name} - ${track.artist_name} iTunes link`}
               target='_blank'
+              rel="noopener noreferrer"
             >iTunes</a>
           </li>
           <li>
@@ -30,6 +31,7 @@ class Track extends Component {
               type='amzn'
               title={`${track.track_name} - ${track.artist_name} Amazon link`}
               target='_blank'
+              rel="noopener noreferrer"
             >Amazon</a>
           </li>
           <li>
@@ -37,6 +39,7 @@ class Track extends Component {
               href={`https://www.junodownload.com/search/?q[all][]=${track.track_name} ${track.artist_name}`}
               title={`${track.track_name} - ${track.artist_name} Junodownload link`}
               target='_blank'
+              rel="noopener noreferrer"
             >Junodownload</a>
           </li>
           <li>
@@ -44,6 +47,7 @@ class Track extends Component {
               href={track.spotify_url}
               title={`${track.track_name} - ${track.artist_name} Spotify link`}
               target='_blank'
+              rel="noopener noreferrer"
             >Spotify</a>
           </li>
         </ul>

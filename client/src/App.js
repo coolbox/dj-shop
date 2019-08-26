@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import LoginButtons from './components/login_buttons';
 import Playlists from './components/playlists';
 import Playlist from './components/playlist';
 import Footer from './components/footer';
@@ -10,10 +11,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <form>
-            <button formAction="/api/v1/login/new">Log in</button>
-          </form>
-
+          <Route exact path={`/`} component={LoginButtons} />
           <Route exact path={`/playlists`} component={Playlists} />
           <Route path={`/playlists/:playlist_id`} component={Playlist} />
         </div>

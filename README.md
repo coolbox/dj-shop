@@ -43,3 +43,6 @@ Docs - https://affiliate.itunes.apple.com/resources/documentation/itunes-store-w
 ## Design inspiration
 Cards: https://dribbble.com/shots/4155955-Cards-UI-Exploration
 Tracks: https://uimovement.com/design/customize-your-music/
+
+## Omniauth, Rails API, before_action
+https://medium.com/@michaelries_38041/oauth-in-react-redux-applications-5d69287211f3
