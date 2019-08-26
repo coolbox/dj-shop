@@ -39,12 +39,16 @@ class SpotifyApi < Apis::Base
     )
   end
 
-  def user_playlists
+  def user_playlists(offset = 0, limit = 50)
     endpoint = "/users/#{current_user.uid}/playlists"
 
     response = with_http_retries do
       HTTParty.get(
         api_endpoint_url(endpoint),
+        query: {
+          offset: offset,
+          limit: limit
+        },
         headers: @headers
       )
     end

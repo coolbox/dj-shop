@@ -6,13 +6,14 @@ class Playlists extends Component {
   constructor () {
     super()
     this.state = {
-      playlists: []
+      playlists: [],
+      offset: 0
     }
     this.getPlaylists = this.getPlaylists.bind(this)
   }
 
   componentDidMount () {
-    this.getPlaylists()
+    this.getPlaylists(this.state.offset)
   }
 
   fetch (endpoint) {
@@ -31,11 +32,21 @@ class Playlists extends Component {
       .catch(error => console.log(error))
   }
 
-  getPlaylists () {
-    this.fetch('/api/v1/playlists')
-      .then(playlists => {
-        if (playlists.length) {
-          this.setState({playlists: playlists})
+  getPlaylists (offset) {
+    this.fetch('/api/v1/playlists?offset=' + offset)
+      .then(response => {
+        this.setState({
+          offset: response.offset,
+          limit: response.limit,
+          playlists: this.state.playlists.concat(response.playlists),
+          next: response.next,
+          total: response.total
+        })
+
+        console.log(this.state.playlists.length, this.state.total)
+        if(this.state.playlists.length < this.state.total){
+          const newOffset = this.state.offset + this.state.limit
+          this.getPlaylists(newOffset)
         }
       })
   }

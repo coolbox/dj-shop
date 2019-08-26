@@ -36,22 +36,13 @@ class Playlist extends Component {
   getPlaylist () {
     this.fetch('/api/v1/playlists/' + this.props.match.params.playlist_id)
       .then(playlist => {
-        this.setState({
-          playlist: playlist,
-          poll_count: this.state.poll_count + 1
-        })
-
-        if(playlist.tracks.length !== playlist.track_count){
-          delayed.delay(
-            this.getPlaylist,
-            500
-          )
-        }
+        this.setState({playlist: playlist})
       })
   }
 
   render() {
     const playlist = this.state.playlist
+    console.log(playlist)
     if (playlist){
       const songString = playlist.tracks.length > 1 ? 'songs' : 'song'
       const loadingTracks = playlist.tracks.length !== playlist.track_count
