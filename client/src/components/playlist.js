@@ -42,10 +42,11 @@ class Playlist extends Component {
 
   render() {
     const playlist = this.state.playlist
-    console.log(playlist)
+
     if (playlist){
-      const songString = playlist.tracks.length > 1 ? 'songs' : 'song'
-      const loadingTracks = playlist.tracks.length !== playlist.track_count
+      const tracks = playlist.tracks.items
+      const songString = tracks.length > 1 ? 'songs' : 'song'
+      const loadingTracks = tracks.length !== playlist.track_count
 
       return (
         <div className='playlist'>
@@ -59,10 +60,10 @@ class Playlist extends Component {
             height='250'
           />
           <h2>Tracks</h2>
-          <h2>{playlist.tracks.length} {songString}</h2>
+          <h2>{tracks.length} {songString}</h2>
           { loadingTracks && (<h3>Loading…</h3>) }
           <ol>
-            {playlist.tracks.map((track, i) => (
+            {tracks.map((track, i) => (
               <li key={track.id}>
                 <Track track={track} />
               </li>
