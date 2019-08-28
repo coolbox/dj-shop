@@ -1,4 +1,4 @@
-class TrackWorker
+class ClickWorker
   include Sidekiq::Worker
   sidekiq_options queue: :track_generator, retry: 5
 

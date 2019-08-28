@@ -60,7 +60,9 @@ class Playlists extends Component {
               <Link to={`/playlists/${playlist.id}`}>
                 <h1>{playlist.name}</h1>
               </Link>
-                <h3>{playlist.track_count} {pluralize('song', playlist.track_count)}</h3>
+              <h3>
+                {playlist.track_count} {pluralize('song', playlist.track_count)}
+              </h3>
               <Link to={`/playlists/${playlist.id}`}>
                 <img
                   src={playlist.cover_url}

@@ -7,11 +7,9 @@ class Playlist extends Component {
   constructor () {
     super()
     this.state = {
-      playlist: null,
-      poll_count: 0
+      playlist: null
     }
     this.getPlaylist = this.getPlaylist.bind(this)
-    this.itunesUrl = this.itunesUrl.bind(this)
   }
 
   componentDidMount () {
@@ -36,25 +34,15 @@ class Playlist extends Component {
 
   getPlaylist () {
     this.fetch('/api/v1/playlists/' + this.props.match.params.playlist_id)
-      .then(response => {
-        this.setState(response)
+      .then(playlist => {
+        this.setState({playlist: playlist})
       })
-  }
-
-  itunesUrl (track_id) {
-    console.log(track_id)
-    var track_urls = _.filter (this.state.track_urls, function(track_url) {
-      return track_url.spotify_id = track_id
-    })
-    console.log(track_urls)
-    // return track_urls[0].itunes_url
   }
 
   render() {
     const playlist = this.state.playlist
 
     if (playlist){
-      console.log(playlist)
       const tracks = playlist.tracks.items
       const songString = tracks.length > 1 ? 'songs' : 'song'
       const loadingTracks = tracks.length !== playlist.track_count
@@ -78,7 +66,6 @@ class Playlist extends Component {
               <li key={trackObject.track.id}>
                 <Track
                   track={trackObject.track}
-                  itunesUrl={this.itunesUrl(trackObject.track.id)}
                 />
               </li>
             ))}

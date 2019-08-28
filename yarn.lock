@@ -14,6 +14,21 @@ add-zero@^1.0.0:
   resolved "https://registry.yarnpkg.com/add-zero/-/add-zero-1.0.0.tgz#88e221696717f66db467672f3f9aa004de9f1a2c"
   integrity sha1-iOIhaWcX9m20Z2cvP5qgBN6fGiw=
 
+axios@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.0.tgz#8e09bff3d9122e133f7b8101c8fbdd00ed3d2ab8"
+  integrity sha512-1uvKqKQta3KBxIz14F2v06AEHZ/dIoeKfbTRkK1E5oqjDnuEerLmYTgJB5AiQZHJcljpg1TuRzdjDR06qNk0DQ==
+  dependencies:
+    follow-redirects "1.5.10"
+    is-buffer "^2.0.2"
+
+debug@=3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+  integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
+  dependencies:
+    ms "2.0.0"
+
 decode-uri-component@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
@@ -23,6 +38,13 @@ delayed@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/delayed/-/delayed-2.0.0.tgz#7a338c997fbc6988b57e7fd6177298934666e747"
   integrity sha512-egVMG7oyLvt0hQTCFkk15ly065RcPYr4ePCjxETESVX5UJLe+kh9MGD8TFkDWHOhga/ljNPZE1AEM2/sL0KK0w==
+
+follow-redirects@1.5.10:
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+  integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
+  dependencies:
+    debug "=3.1.0"
 
 format-duration@^1.3.1:
   version "1.3.1"
@@ -56,10 +78,22 @@ hoist-non-react-statics@^3.1.0:
   dependencies:
     react-is "^16.7.0"
 
+is-buffer@^2.0.2:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-2.0.3.tgz#4ecf3fcf749cbd1e472689e109ac66261a25e725"
+  integrity sha512-U15Q7MXTuZlrbymiz95PJpZxu8IlipAp4dtS3wOdgPXx3mqBnslrWU14kxfHB+Py/+2PVKSr37dMAgM2A4uArw==
+
 isarray@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
   integrity sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=
+
+itunes-helper@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/itunes-helper/-/itunes-helper-1.0.5.tgz#c9f4bd7e5019195c30937df56226290a4a840489"
+  integrity sha512-6liqlmDGPQkU2ir78cj4um/c4mAQNiVSj/sVE+dyQgD5QU/5bLgKC4PuvHYH6sC/Y9uTrux03MEQwPeWmfHKNw==
+  dependencies:
+    axios "^0.19.0"
 
 "js-tokens@^3.0.0 || ^4.0.0":
   version "4.0.0"
@@ -81,6 +115,11 @@ mini-create-react-context@^0.3.0:
     "@babel/runtime" "^7.4.0"
     gud "^1.0.0"
     tiny-warning "^1.0.2"
+
+ms@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
+  integrity sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
 
 object-assign@^4.1.1:
   version "4.1.1"

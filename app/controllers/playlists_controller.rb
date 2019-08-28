@@ -2,12 +2,10 @@
 
 class PlaylistsController < ApplicationController
   def index
-    Rails.logger.debug("@@@@@@ #{index_params}")
     spotify_playlists = @spotify_client.user_playlists(
       index_params[:offset] || 0
     )
     @playlists = current_user ? spotify_playlists["items"] : []
-    Rails.logger.debug("@@@@@@ #{spotify_playlists.inspect}, Offset: #{index_params[:offset]}")
     @playlists = @playlists.map do |p|
       playlist_attributes(p)
     end
@@ -23,18 +21,7 @@ class PlaylistsController < ApplicationController
 
   def show
     @playlist = @spotify_client.playlist(params[:id])
-
-    spotify_tracks = @playlist["tracks"]["items"]
-    Track.create_from_spotify(spotify_tracks)
-    @track_urls = Track.where(
-      spotify_id: spotify_tracks.map { |t| t["track"]["id"] }
-    )
-    # @playlist = playlist_attributes(@playlist).merge(tracks: @tracks)
-
-    render json: {
-      playlist: @playlist,
-      track_urls: @track_urls
-    }
+    render json: @playlist
   end
 
   private
