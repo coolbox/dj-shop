@@ -26,12 +26,15 @@ class PlaylistsController < ApplicationController
 
     spotify_tracks = @playlist["tracks"]["items"]
     Track.create_from_spotify(spotify_tracks)
-    # @tracks = Track.where(
-    #   spotify_id: spotify_tracks.map { |t| t["track"]["id"] }
-    # )
+    @track_urls = Track.where(
+      spotify_id: spotify_tracks.map { |t| t["track"]["id"] }
+    )
     # @playlist = playlist_attributes(@playlist).merge(tracks: @tracks)
 
-    render json: @playlist
+    render json: {
+      playlist: @playlist,
+      track_urls: @track_urls
+    }
   end
 
   private

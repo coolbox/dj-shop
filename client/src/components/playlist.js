@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import _ from 'underscore';
 import Track from '.././components/track';
 import Breadcrumbs from '.././components/breadcrumbs';
-import delayed from "delayed";
 
 class Playlist extends Component {
   constructor () {
@@ -11,6 +11,7 @@ class Playlist extends Component {
       poll_count: 0
     }
     this.getPlaylist = this.getPlaylist.bind(this)
+    this.itunesUrl = this.itunesUrl.bind(this)
   }
 
   componentDidMount () {
@@ -35,15 +36,25 @@ class Playlist extends Component {
 
   getPlaylist () {
     this.fetch('/api/v1/playlists/' + this.props.match.params.playlist_id)
-      .then(playlist => {
-        this.setState({playlist: playlist})
+      .then(response => {
+        this.setState(response)
       })
+  }
+
+  itunesUrl (track_id) {
+    console.log(track_id)
+    var track_urls = _.filter (this.state.track_urls, function(track_url) {
+      return track_url.spotify_id = track_id
+    })
+    console.log(track_urls)
+    // return track_urls[0].itunes_url
   }
 
   render() {
     const playlist = this.state.playlist
 
     if (playlist){
+      console.log(playlist)
       const tracks = playlist.tracks.items
       const songString = tracks.length > 1 ? 'songs' : 'song'
       const loadingTracks = tracks.length !== playlist.track_count
@@ -54,7 +65,7 @@ class Playlist extends Component {
           <h3>Playlist</h3>
           <h1>{playlist.name}</h1>
           <img
-            src={playlist.cover_url}
+            src={playlist.images[0].url}
             alt={playlist.name}
             width='250'
             height='250'
@@ -63,9 +74,12 @@ class Playlist extends Component {
           <h2>{tracks.length} {songString}</h2>
           { loadingTracks && (<h3>Loading…</h3>) }
           <ol>
-            {tracks.map((track, i) => (
-              <li key={track.id}>
-                <Track track={track} />
+            {tracks.map((trackObject, i) => (
+              <li key={trackObject.track.id}>
+                <Track
+                  track={trackObject.track}
+                  itunesUrl={this.itunesUrl(trackObject.track.id)}
+                />
               </li>
             ))}
           </ol>

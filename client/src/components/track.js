@@ -5,21 +5,25 @@ class Track extends Component {
   render() {
     const track = this.props.track
     const trackTime = format(track.duration_ms, { leading: true })
+    const artistNames = track.artists.map((artist, i) => (
+      artist.name
+    )).join(', ')
+
     return (
       <div>
         <img
-          src={track.spotify_image_url}
-          alt={`${track.track_name} - ${track.artist_name} artwork`}
+          src={track.album.images[0].url}
+          alt={`${track.name} - ${artistNames} artwork`}
           width='100'
           height='100'
         />
-        <p>{track.track_name} - {track.artist_name} <small>({trackTime})</small></p>
+        <p>{track.name} - {artistNames} <small>({trackTime})</small></p>
         <p>Search for track</p>
         <ul>
           <li>
             <a
               href={track.itunes_url}
-              title={`${track.track_name} - ${track.artist_name} iTunes link`}
+              title={`${track.name} - ${artistNames} iTunes link`}
               target='_blank'
               rel="noopener noreferrer"
             >iTunes</a>
@@ -27,25 +31,25 @@ class Track extends Component {
           <li>
             <a
               href='#'
-              search={`${track.track_name} ${track.artist_name}`}
+              search={`${track.name} ${artistNames}`}
               type='amzn'
-              title={`${track.track_name} - ${track.artist_name} Amazon link`}
+              title={`${track.name} - ${artistNames} Amazon link`}
               target='_blank'
               rel="noopener noreferrer"
             >Amazon</a>
           </li>
           <li>
             <a
-              href={`https://www.junodownload.com/search/?q[all][]=${track.track_name} ${track.artist_name}`}
-              title={`${track.track_name} - ${track.artist_name} Junodownload link`}
+              href={`https://www.junodownload.com/search/?q[all][]=${track.name} ${artistNames}`}
+              title={`${track.name} - ${artistNames} Junodownload link`}
               target='_blank'
               rel="noopener noreferrer"
             >Junodownload</a>
           </li>
           <li>
             <a
-              href={track.spotify_url}
-              title={`${track.track_name} - ${track.artist_name} Spotify link`}
+              href={track.href}
+              title={`${track.name} - ${artistNames} Spotify link`}
               target='_blank'
               rel="noopener noreferrer"
             >Spotify</a>
