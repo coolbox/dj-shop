@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Switch } from "react-router-dom";
 import MakeRouteWithSubRoutes from './makeRouteWithSubRoutes';
+
+import AuthHelperMethods from './authHelperMethods';
+import WithAuth from './withAuth';
+
 import { Home } from '../views/Home';
 import { Playlists } from '../views/Playlists';
 import { Playlist } from '../views/Playlist';
@@ -9,6 +13,8 @@ import { NoMatch } from '../views/NoMatch';
 class Routes extends Component {
   constructor () {
     super()
+
+    this.Auth = new AuthHelperMethods();
     this.state = {
       routes: [
         {
@@ -35,6 +41,11 @@ class Routes extends Component {
     }
   }
 
+  _handleLogout () {
+    this.Auth.logout()
+    this.props.history.replace('/login');
+  }
+
   render() {
     return (
       <div>
@@ -52,4 +63,4 @@ class Routes extends Component {
   }
 }
 
-export default Routes;
+export default WithAuth(Routes);
