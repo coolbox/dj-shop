@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import _ from 'underscore';
 import Track from '.././components/track';
 import Breadcrumbs from '.././components/breadcrumbs';
 

@@ -1,17 +1,6 @@
 import React, { Component } from 'react';
-import qs from "query-string";
 
 class LoginButtons extends Component {
-  storeToken () {
-    const jwt =
-      qs.parse(this.props.location.search, { ignoreQueryPrefix: true }).token
-    sessionStorage.setItem("jwt", jwt)
-  }
-
-  componentDidMount () {
-    this.storeToken();
-  }
-
   render() {
     return (
       <form>
