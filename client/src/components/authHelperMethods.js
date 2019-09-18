@@ -4,21 +4,12 @@ export default class AuthHelperMethods {
   // Initializing important variables
   constructor(domain) {
     //THIS LINE IS ONLY USED WHEN YOU'RE IN PRODUCTION MODE!
-    this.domain = domain || "http://localhost:3000"; // API server domain
+    this.domain = domain || "http://localhost:3100"; // API server domain
   }
 
-  login = (username, password) => {
+  login = () => {
     // Get a token from api server using the fetch api
-    return this.fetch(`/log-in`, {
-      method: "POST",
-      body: JSON.stringify({
-        username,
-        password
-      })
-    }).then(res => {
-      this.setToken(res.token); // Setting the token in localStorage
-      return Promise.resolve(res);
-    });
+    return this.fetch(`/api/v1/login/new`);
   };
 
   loggedIn = () => {
@@ -35,7 +26,7 @@ export default class AuthHelperMethods {
         return true;
       } else return false;
     } catch (err) {
-      console.log("expired check failed! Line 42: AuthService.js");
+      console.log("expired check failed! Line 29: AuthService.js");
       return false;
     }
   };
@@ -51,8 +42,10 @@ export default class AuthHelperMethods {
   };
 
   logout = () => {
+    console.log("Logging out")
     // Clear user token and profile data from localStorage
     localStorage.removeItem("id_token");
+    console.log("Token: ", this.getToken())
   };
 
   getConfirm = () => {

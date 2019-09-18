@@ -1,26 +1,31 @@
 import React, { Component } from 'react';
 import { Switch } from "react-router-dom";
-import MakeRouteWithSubRoutes from './makeRouteWithSubRoutes';
 
-import AuthHelperMethods from './authHelperMethods';
 import WithAuth from './withAuth';
+import MakeRouteWithSubRoutes from './makeRouteWithSubRoutes';
 
 import { Home } from '../views/Home';
 import { Playlists } from '../views/Playlists';
 import { Playlist } from '../views/Playlist';
 import { NoMatch } from '../views/NoMatch';
+import { Login } from '../views/Login';
+import Footer from './footer';
 
 class Routes extends Component {
   constructor () {
     super()
 
-    this.Auth = new AuthHelperMethods();
     this.state = {
       routes: [
         {
           path: '/',
           exact: true,
           component: Home
+        },
+        {
+          path: '/login',
+          exact: true,
+          component: Login
         },
         {
           path: '/playlists',
@@ -41,11 +46,6 @@ class Routes extends Component {
     }
   }
 
-  _handleLogout () {
-    this.Auth.logout()
-    this.props.history.replace('/login');
-  }
-
   render() {
     return (
       <div>
@@ -58,6 +58,7 @@ class Routes extends Component {
             )
           }
         </Switch>
+        <Footer />
       </div>
     )
   }
