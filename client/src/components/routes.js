@@ -9,6 +9,7 @@ import { Playlists } from '../views/Playlists';
 import { Playlist } from '../views/Playlist';
 import { NoMatch } from '../views/NoMatch';
 import { Login } from '../views/Login';
+import NavBar from './navBar';
 import Footer from './footer';
 
 class Routes extends Component {
@@ -49,6 +50,7 @@ class Routes extends Component {
   render() {
     return (
       <div>
+        <NavBar />
         <Switch>
           {
             this.state.routes.map(
