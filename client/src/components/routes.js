@@ -31,13 +31,11 @@ class Routes extends Component {
         {
           path: '/playlists',
           exact: true,
-          component: Playlists,
-          routes: [
-            {
-              path: '/playlists/:playlist_id',
-              component: Playlist
-            }
-          ]
+          component: Playlists
+        },
+        {
+          path: '/playlists/:playlistId',
+          component: Playlist,
         },
         {
           path: '/:no_match',
