@@ -4,13 +4,11 @@ import { Switch } from "react-router-dom";
 import WithAuth from './withAuth';
 import MakeRouteWithSubRoutes from './makeRouteWithSubRoutes';
 
-import { Home } from '../views/Home';
-import { Playlists } from '../views/Playlists';
-import { Playlist } from '../views/Playlist';
-import { NoMatch } from '../views/NoMatch';
-import { Login } from '../views/Login';
-import NavBar from './navBar';
-import Footer from './footer';
+import { Home } from '../views/home';
+import { Playlists } from '../views/playlists';
+import { Playlist } from '../views/playlist';
+import { NoMatch } from '../views/noMatch';
+import { Login } from '../views/login';
 
 class Routes extends Component {
   constructor () {
@@ -48,7 +46,6 @@ class Routes extends Component {
   render() {
     return (
       <div>
-        <NavBar />
         <Switch>
           {
             this.state.routes.map(
@@ -58,7 +55,6 @@ class Routes extends Component {
             )
           }
         </Switch>
-        <Footer />
       </div>
     )
   }

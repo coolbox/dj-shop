@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Layout } from '../../components/layout';
+
 import Track from '../../components/track';
 import Breadcrumbs from '../../components/breadcrumbs';
 import AuthHelperMethods from '../../components/authHelperMethods';
@@ -81,4 +83,4 @@ class Playlist extends Component {
   }
 }
 
-export default Playlist;
+export default Layout(Playlist);

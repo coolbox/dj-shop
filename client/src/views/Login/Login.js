@@ -1,21 +1,7 @@
 import React, { Component } from 'react';
-import AuthHelperMethods from '../../components/authHelperMethods';
-
-const Auth = new AuthHelperMethods();
+import Layout from '../../components/layout/layout';
 
 class Login extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleLogout = this.handleLogout.bind(this);
-  }
-
-  handleLogout (event) {
-    event.preventDefault();
-    Auth.logout()
-    this.props.history.replace('/login');
-  }
-
   render() {
     return (
       <div>
@@ -26,10 +12,9 @@ class Login extends Component {
             Log in
           </button>
         </form>
-        <button onClick={this.handleLogout}>Log out</button>
       </div>
     );
   }
 }
 
-export default Login;
+export default Layout(Login);

@@ -46,3 +46,7 @@ Tracks: https://uimovement.com/design/customize-your-music/
 
 ## Omniauth, Rails API, before_action
 https://medium.com/@michaelries_38041/oauth-in-react-redux-applications-5d69287211f3
+
+## Photo credits
+Photo by Emiliano Vittoriosi on Unsplash (https://unsplash.com/@emilianovittoriosi?utm_medium=referral&utm_campaign=photographer-credit&utm_content=creditBadge)
+Photo by Alfred Twj on Unsplash (https://unsplash.com/@alfredtwj?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

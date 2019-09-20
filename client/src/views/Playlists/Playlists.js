@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Layout } from '../../components/layout';
 import { Link } from "react-router-dom";
 import pluralize from "pluralize";
+
 import AuthHelperMethods from '../../components/authHelperMethods';
 
 const Auth = new AuthHelperMethods();
@@ -85,4 +87,4 @@ class Playlists extends Component {
   }
 }
 
-export default Playlists;
+export default Layout(Playlists);

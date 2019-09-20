@@ -8,4 +8,4 @@ class NoMatch extends Component {
   }
 }
 
-export default NoMatch;
+export default Layout(NoMatch);
