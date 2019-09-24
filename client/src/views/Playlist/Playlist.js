@@ -65,8 +65,8 @@ class Playlist extends Component {
           <h2>{tracks.length} {songString}</h2>
           { loadingTracks && (<h3>Loading…</h3>) }
           <ol>
-            {tracks.map((trackObject, i) => (
-              <li key={trackObject.track.id}>
+            {tracks.map((trackObject, index) => (
+              <li key={`track-${trackObject.track.id}-${index}`}>
                 <Track
                   track={trackObject.track}
                 />

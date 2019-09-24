@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Layout from '../../components/layout/layout';
 
 class NoMatch extends Component {
   render() {

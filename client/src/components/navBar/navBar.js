@@ -16,6 +16,10 @@ class NavBar extends Component {
           title: 'Home'
         },
         {
+          path: '/login',
+          title: 'Login'
+        },
+        {
           path: '/playlists',
           title: 'Playlists',
           authenticated: true

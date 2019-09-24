@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_18_204032) do
+ActiveRecord::Schema.define(version: 2019_09_24_201455) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "hstore"
   enable_extension "plpgsql"
+
+  create_table "clicks", force: :cascade do |t|
+    t.hstore "data"
+    t.string "user_uid"
+    t.string "trackProvider"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["data"], name: "index_clicks_on_data", using: :gist
+  end
 
   create_table "tracks", force: :cascade do |t|
     t.string "spotify_id", null: false

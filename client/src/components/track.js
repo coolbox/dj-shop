@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import format from 'format-duration';
+import AuthHelperMethods from '../components/authHelperMethods';
+
 const itunes = require('itunes-helper')
+const Auth = new AuthHelperMethods();
 
 class Track extends Component {
   constructor () {
@@ -10,6 +13,7 @@ class Track extends Component {
     }
     this.setAttributes = this.setAttributes.bind(this)
     this.getItunesUrl = this.getItunesUrl.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount () {
@@ -50,6 +54,40 @@ class Track extends Component {
     )
   }
 
+  fetch (endpoint, body) {
+    const headers =  {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer: ${Auth.getToken()}`
+    }
+
+    return window.fetch(endpoint, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify(body)
+      })
+      .then(response => response.json())
+      .catch(error => console.log(error))
+  }
+
+  trackClick (trackProvider) {
+    let track = this.state
+    this.fetch('/api/v1/clicks', {
+      artist_names: track.artist_names,
+      name: track.name,
+      track_time: track.track_time,
+      album_image: track.album_image,
+      itunes_url: track.itunes_url,
+      spotify_url: track.spotify_url,
+      trackProvider: trackProvider
+    })
+  }
+
+  handleClick (event) {
+    let trackProvider = event.target.getAttribute('data-track-provider');
+    this.trackClick(trackProvider)
+  }
+
   render() {
     const track = this.state
 
@@ -69,36 +107,44 @@ class Track extends Component {
               <li>
                 <a
                   href={track.itunes_url}
+                  onClick={this.handleClick}
                   title={`${track.name} - ${track.artist_names} iTunes link`}
                   target='_blank'
                   rel="noopener noreferrer"
+                  data-track-provider='itunes'
                 >iTunes</a>
               </li>
             ) }
             <li>
               <a
                 href='#'
+                onClick={this.handleClick}
                 search={`${track.name} ${track.artist_names}`}
                 type='amzn'
                 title={`${track.name} - ${track.artist_names} Amazon link`}
                 target='_blank'
                 rel="noopener noreferrer"
+                data-track-provider='amazon'
               >Amazon</a>
             </li>
             <li>
               <a
                 href={`https://www.junodownload.com/search/?q[all][]=${track.name} ${track.artist_names}`}
+                onClick={this.handleClick}
                 title={`${track.name} - ${track.artist_names} Junodownload link`}
                 target='_blank'
                 rel="noopener noreferrer"
+                data-track-provider='junodownload'
               >Junodownload</a>
             </li>
             <li>
               <a
                 href={track.spotify_url}
+                onClick={this.handleClick}
                 title={`${track.name} - ${track.artist_names} Spotify link`}
                 target='_blank'
                 rel="noopener noreferrer"
+                data-track-provider='spotify'
               >Spotify</a>
             </li>
           </ul>
