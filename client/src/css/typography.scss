@@ -1,0 +1,37 @@
+h1,
+h2,
+h3 {
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  line-height: 125%;
+}
+
+h1 {
+  font-size: 1.4em;
+}
+
+h1.large {
+  font-size: 4em;
+
+  // @media only screen and (max-width: $large-screen) {
+  //   font-size: 5em;
+  // }
+  //
+  // @media only screen and (max-width: $small-screen) {
+  //   font-size: 2em;
+  // }
+}
+
+h2 {
+  color: #000;
+}
+
+a {
+  color: #1db954;
+  font-family: 'Karla', sans-serif;
+}
+
+a:hover {
+  color: #1ed760;
+  text-decoration: none;
+}

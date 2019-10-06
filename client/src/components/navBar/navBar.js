@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import AuthHelperMethods from '../authHelperMethods';
 
-import './index.css';
-
 const Auth = new AuthHelperMethods();
 
 class NavBar extends Component {
@@ -37,7 +35,11 @@ class NavBar extends Component {
 
     return (
       <li>
-        <button onClick={this.handleLogout}>Log out</button>
+        <button
+          className='btn-link'
+          onClick={this.handleLogout}>
+          Log out
+        </button>
       </li>
     )
   }

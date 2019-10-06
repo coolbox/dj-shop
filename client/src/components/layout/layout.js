@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { NavBar } from '../navBar';
 import { Footer } from '../footer';
 
-import './index.css';
-
 function AppLayout(PageComponent) {
   class Layout extends Component {
     render() {
