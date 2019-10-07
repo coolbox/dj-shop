@@ -1,3 +1,5 @@
+@import 'variables';
+
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -10,7 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-@import url('typography.scss');
-@import url('layout.scss');
-@import url('elements.scss');
-@import url('card.scss');
+@import 'typography';
+@import 'layout';
+@import 'elements';
+@import 'card';

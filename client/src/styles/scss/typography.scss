@@ -12,14 +12,6 @@ h1 {
 
 h1.large {
   font-size: 4em;
-
-  // @media only screen and (max-width: $large-screen) {
-  //   font-size: 5em;
-  // }
-  //
-  // @media only screen and (max-width: $small-screen) {
-  //   font-size: 2em;
-  // }
 }
 
 h2 {
@@ -27,11 +19,11 @@ h2 {
 }
 
 a {
-  color: #1db954;
+  color: $mountain-meadow;
   font-family: 'Karla', sans-serif;
 }
 
 a:hover {
-  color: #1ed760;
+  color: $malachite;
   text-decoration: none;
 }

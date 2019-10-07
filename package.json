@@ -6,7 +6,8 @@
     "yarn": "1.17.3"
   },
   "scripts": {
-    "build": "yarn --cwd client install && yarn --cwd client build",
+    "build": "yarn --cwd client build",
+    "start": "yarn --cwd client start",
     "deploy": "cp -a client/build/. public/",
     "heroku-postbuild": "yarn build && yarn deploy"
   },
@@ -19,6 +20,7 @@
     "pluralize": "^8.0.0",
     "query-string": "^6.8.2",
     "react-router-dom": "^5.0.1",
+    "sass": "^1.23.0",
     "underscore": "^1.9.1"
   }
 }

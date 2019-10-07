@@ -32,23 +32,23 @@ class Home extends Component {
             </li>
           </ul>
         </div>
-        <div class="bkg-image carousel-wrap">
-          <ul class="carousel">
-            <li class="carousel-card">
-              <h4 class="quote font-align--center color--dark-grey margin--bottom--small">Hello World</h4>
-              <p class="quote-author color--orange font-align--center">Foo bar</p>
+        <div className="bkg-image carousel-wrap">
+          <ul className="carousel">
+            <li className="carousel-card">
+              <h4 className="quote font-align--center color--dark-grey margin--bottom--small">Hello World</h4>
+              <p className="quote-author color--orange font-align--center">Foo bar</p>
             </li>
-            <li class="carousel-card">
-              <h4 class="quote font-align--center color--dark-grey margin--bottom--small">Hello World</h4>
-              <p class="quote-author color--orange font-align--center">Foo bar</p>
+            <li className="carousel-card">
+              <h4 className="quote font-align--center color--dark-grey margin--bottom--small">Hello World</h4>
+              <p className="quote-author color--orange font-align--center">Foo bar</p>
             </li>
-            <li class="carousel-card">
-              <h4 class="quote font-align--center color--dark-grey margin--bottom--small">Hello World</h4>
-              <p class="quote-author color--orange font-align--center">Foo bar</p>
+            <li className="carousel-card">
+              <h4 className="quote font-align--center color--dark-grey margin--bottom--small">Hello World</h4>
+              <p className="quote-author color--orange font-align--center">Foo bar</p>
             </li>
-            <li class="carousel-card">
-              <h4 class="quote font-align--center color--dark-grey margin--bottom--small">Hello World</h4>
-              <p class="quote-author color--orange font-align--center">Foo bar</p>
+            <li className="carousel-card">
+              <h4 className="quote font-align--center color--dark-grey margin--bottom--small">Hello World</h4>
+              <p className="quote-author color--orange font-align--center">Foo bar</p>
             </li>
           </ul>
         </div>
