@@ -14,46 +14,56 @@ class Home extends Component {
           <video id='heroVid' loop muted autoPlay poster='/images/club-scene.jpg'>
             <source src='/videos/club-scene.mp4' type='video/mp4' />
           </video>
-          <div className='heroContent'>
-            <h1 className='large'>Spotify to your decks, <br /> faster.</h1>
+          <div className='hero-content'>
+            <div className='holder'>
+              <h1>Spotify playlists to your decks, faster.</h1>
+              <a className='pill' title='Log in'>Get started</a>
+            </div>
           </div>
         </div>
         <div className='wrapper'>
           <h2>Prepare your next DJ set</h2>
           <ul className='steps'>
             <li>
-              <h3>1. Create your playlist</h3>
+              <span className='step-number'>1</span>
+              <h3>Create your Spotify playlist</h3>
             </li>
             <li>
-              <h3>2. Login</h3>
+              <span className='step-number'>2</span>
+              <h3>Login</h3>
             </li>
             <li>
-              <h3>2. Buy your tracks</h3>
+              <span className='step-number'>3</span>
+              <h3>Buy your tracks</h3>
             </li>
           </ul>
         </div>
-        <div className="bkg-image carousel-wrap">
-          <ul className="carousel">
-            <li className="carousel-card">
-              <h4 className="quote font-align--center color--dark-grey margin--bottom--small">Hello World</h4>
-              <p className="quote-author color--orange font-align--center">Foo bar</p>
-            </li>
-            <li className="carousel-card">
-              <h4 className="quote font-align--center color--dark-grey margin--bottom--small">Hello World</h4>
-              <p className="quote-author color--orange font-align--center">Foo bar</p>
-            </li>
-            <li className="carousel-card">
-              <h4 className="quote font-align--center color--dark-grey margin--bottom--small">Hello World</h4>
-              <p className="quote-author color--orange font-align--center">Foo bar</p>
-            </li>
-            <li className="carousel-card">
-              <h4 className="quote font-align--center color--dark-grey margin--bottom--small">Hello World</h4>
-              <p className="quote-author color--orange font-align--center">Foo bar</p>
-            </li>
-          </ul>
-        </div>
-        <div className='exampleTracks'>
-          <h2>Recently purchased</h2>
+        <div className='wrapper--vertical bkg-color--jumbo'>
+          <h2 className='color--jumbo'>Recently purchased</h2>
+          <div className="carousel-wrap">
+            <ul className="carousel">
+              <li className="carousel-card">
+                <img src='/images/album-test.jpg' alt='Album artwork' />
+                <h4>Hello World</h4>
+                <p>Foo bar</p>
+              </li>
+              <li className="carousel-card">
+                <img src='/images/album-test.jpg' alt='Album artwork' />
+                <h4>Hello World</h4>
+                <p>Foo bar</p>
+              </li>
+              <li className="carousel-card">
+                <img src='/images/album-test.jpg' alt='Album artwork' />
+                <h4>Hello World</h4>
+                <p>Foo bar</p>
+              </li>
+              <li className="carousel-card">
+                <img src='/images/album-test.jpg' alt='Album artwork' />
+                <h4>Hello World</h4>
+                <p>Foo bar</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     )

@@ -1,17 +1,91 @@
-/* Error: Undefined variable.
- *    ,
- * 22 |   color: $mountain-meadow;
- *    |          ^^^^^^^^^^^^^^^^
- *    '
- *   src/styles/scss/typography.scss 22:10  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 22 \2502    color: $mountain-meadow;\a    \2502           ^^^^^^^^^^^^^^^^\a    \2575 \a   src/styles/scss/typography.scss 22:10  root stylesheet";
+h1,
+h2,
+h3 {
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  line-height: 125%;
 }
+
+h1 {
+  font-size: 3em;
+  line-height: 130%;
+  margin: 0 0 24px;
+  color: #fff;
+  text-align: center;
+}
+@media only screen and (min-width: 540px) {
+  h1 {
+    font-size: 2.4em;
+  }
+}
+
+h2 {
+  text-align: center;
+  font-size: 3em;
+  margin: 0 auto 30px;
+  width: 75%;
+}
+@media only screen and (min-width: 540px) {
+  h2 {
+    font-size: 2.4em;
+    width: 100%;
+  }
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: normal;
+}
+
+h4 {
+  margin: 0 0 5px;
+  line-height: 135%;
+  font-size: 1.2em;
+}
+
+p {
+  margin: 0 0 10px;
+  color: #737373;
+}
+p:last-child {
+  margin: 0;
+}
+
+a {
+  color: #1db954;
+  font-family: "Karla", sans-serif;
+}
+a:hover {
+  color: #1ed760;
+  text-decoration: none;
+  cursor: pointer;
+}
+a.pill {
+  background-color: #1db954;
+  border-radius: 20px;
+  border: 1px solid #1db954;
+  padding: 10px 28px;
+  font-size: 90%;
+  color: #fff;
+}
+a.pill:hover {
+  background-color: #1ed760;
+}
+
+.color--jumbo {
+  color: #828286;
+}
+
+.color--gray {
+  color: #737373;
+}
+
+.color--black {
+  color: #000;
+}
+
+.color--white {
+  color: #fff;
+}
+
+/*# sourceMappingURL=typography.css.map */

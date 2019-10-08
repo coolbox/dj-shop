@@ -1,3 +1,5 @@
+@import 'variables';
+
 h1,
 h2,
 h3 {
@@ -7,23 +9,85 @@ h3 {
 }
 
 h1 {
-  font-size: 1.4em;
-}
+  font-size: 3em;
+  line-height: 130%;
+  margin: 0 0 24px;
+  color: $white;
+  text-align: center;
 
-h1.large {
-  font-size: 4em;
+  @media only screen and (min-width: $medium-screen) {
+    font-size: 2.4em;
+  }
 }
 
 h2 {
-  color: #000;
+  text-align: center;
+  font-size: 3em;
+  margin: 0 auto 30px;
+  width: 75%;
+
+  @media only screen and (min-width: $medium-screen) {
+    font-size: 2.4em;
+    width: 100%;
+  }
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: normal;
+}
+
+h4 {
+  margin: 0 0 5px;
+  line-height: 135%;
+  font-size: 1.2em;
+}
+
+p {
+  margin: 0 0 10px;
+  color: $gray;
+
+  &:last-child {
+    margin: 0;
+  }
 }
 
 a {
   color: $mountain-meadow;
   font-family: 'Karla', sans-serif;
+
+  &:hover {
+    color: $malachite;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &.pill {
+    background-color: $mountain-meadow;
+    border-radius: 20px;
+    border: 1px solid $mountain-meadow;
+    padding: 10px 28px;
+    font-size: 90%;
+    color: $white;
+
+    &:hover {
+      background-color: $malachite;
+    }
+  }
 }
 
-a:hover {
-  color: $malachite;
-  text-decoration: none;
+.color--jumbo {
+  color: $jumbo;
+}
+
+.color--gray {
+  color: $gray;
+}
+
+.color--black {
+  color: $black;
+}
+
+.color--white {
+  color: $white;
 }
