@@ -10,16 +10,12 @@ class NavBar extends Component {
     this.state = {
       navItems: [
         {
-          path: '/',
-          title: 'Home'
-        },
-        {
           path: '/login',
           title: 'Login'
         },
         {
           path: '/playlists',
-          title: 'Playlists',
+          title: 'Your playlists',
           authenticated: true
         }
       ]
@@ -54,6 +50,14 @@ class NavBar extends Component {
     return (
       <nav>
         <ul>
+          <li>
+            <a href='/' title='Cue - Home'>
+              <div className='logo'>
+                <div className='logo-shape'></div>
+                <span>Cue</span>
+              </div>
+            </a>
+          </li>
           {
             this.state.navItems.map(function(link, index){
               if (link.authenticated){
@@ -67,11 +71,15 @@ class NavBar extends Component {
                   return null;
                 }
               } else {
-                return (
-                  <li key={index}>
-                    <a href={link.path} title={link.title}>{link.title}</a>
-                  </li>
-                )
+                if (Auth.loggedIn()) {
+                  return null;
+                } else {
+                  return (
+                    <li key={index}>
+                      <a href={link.path} title={link.title}>{link.title}</a>
+                    </li>
+                  )
+                }
               }
             })
           }

@@ -9,7 +9,7 @@ h3 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 1.8em;
   line-height: 130%;
   margin: 0 0 24px;
   color: $white;
@@ -22,19 +22,20 @@ h1 {
 
 h2 {
   text-align: center;
-  font-size: 3em;
+  font-size: 1.6em;
   margin: 0 auto 30px;
   width: 75%;
 
   @media only screen and (min-width: $medium-screen) {
-    font-size: 2.4em;
+    font-size: 2em;
     width: 100%;
   }
 }
 
 h3 {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: normal;
+  margin: 14px 0 20px;
 }
 
 h4 {
@@ -55,6 +56,7 @@ p {
 a {
   color: $mountain-meadow;
   font-family: 'Karla', sans-serif;
+  text-decoration: none;
 
   &:hover {
     color: $malachite;
@@ -76,18 +78,27 @@ a {
   }
 }
 
-.color--jumbo {
-  color: $jumbo;
-}
+.logo {
+  display: inline-block;
+  vertical-align: middle;
 
-.color--gray {
-  color: $gray;
-}
+  .logo-shape {
+    width: 14px;
+    height: 14px;
+    border: 2px solid $mountain-meadow;
+    border-radius: 50%;
+    background: $white;
+    margin-right: 5px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+  }
 
-.color--black {
-  color: $black;
-}
-
-.color--white {
-  color: $white;
+  span {
+    color: $mountain-meadow;
+    text-align: center;
+    font-size: 1.25em;
+    display: inline-block;
+    vertical-align: sub;
+  }
 }

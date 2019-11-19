@@ -7,7 +7,7 @@ h3 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 1.8em;
   line-height: 130%;
   margin: 0 0 24px;
   color: #fff;
@@ -21,20 +21,21 @@ h1 {
 
 h2 {
   text-align: center;
-  font-size: 3em;
+  font-size: 1.6em;
   margin: 0 auto 30px;
   width: 75%;
 }
 @media only screen and (min-width: 540px) {
   h2 {
-    font-size: 2.4em;
+    font-size: 2em;
     width: 100%;
   }
 }
 
 h3 {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: normal;
+  margin: 14px 0 20px;
 }
 
 h4 {
@@ -54,6 +55,7 @@ p:last-child {
 a {
   color: #1db954;
   font-family: "Karla", sans-serif;
+  text-decoration: none;
 }
 a:hover {
   color: #1ed760;
@@ -72,20 +74,27 @@ a.pill:hover {
   background-color: #1ed760;
 }
 
-.color--jumbo {
-  color: #828286;
+.logo {
+  display: inline-block;
+  vertical-align: middle;
 }
-
-.color--gray {
-  color: #737373;
+.logo .logo-shape {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #1db954;
+  border-radius: 50%;
+  background: #fff;
+  margin-right: 5px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
 }
-
-.color--black {
-  color: #000;
-}
-
-.color--white {
-  color: #fff;
+.logo span {
+  color: #1db954;
+  text-align: center;
+  font-size: 1.25em;
+  display: inline-block;
+  vertical-align: sub;
 }
 
 /*# sourceMappingURL=typography.css.map */

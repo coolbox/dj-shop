@@ -4,10 +4,35 @@ body {
   font-family: "helvetica", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   line-height: 130%;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.color--jumbo {
+  color: #828286;
+}
+
+.color--gray {
+  color: #737373;
+}
+
+.color--black {
+  color: #000;
+}
+
+.color--white {
+  color: #fff;
+}
+
+.bkg--black {
+  background-color: #000;
+}
+
+.margin-bottom--lg {
+  margin-bottom: 20px;
 }
 
 h1,
@@ -19,7 +44,7 @@ h3 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 1.8em;
   line-height: 130%;
   margin: 0 0 24px;
   color: #fff;
@@ -33,20 +58,21 @@ h1 {
 
 h2 {
   text-align: center;
-  font-size: 3em;
+  font-size: 1.6em;
   margin: 0 auto 30px;
   width: 75%;
 }
 @media only screen and (min-width: 540px) {
   h2 {
-    font-size: 2.4em;
+    font-size: 2em;
     width: 100%;
   }
 }
 
 h3 {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: normal;
+  margin: 14px 0 20px;
 }
 
 h4 {
@@ -66,6 +92,7 @@ p:last-child {
 a {
   color: #1db954;
   font-family: "Karla", sans-serif;
+  text-decoration: none;
 }
 a:hover {
   color: #1ed760;
@@ -84,28 +111,41 @@ a.pill:hover {
   background-color: #1ed760;
 }
 
-.color--jumbo {
-  color: #828286;
+.logo {
+  display: inline-block;
+  vertical-align: middle;
 }
-
-.color--gray {
-  color: #737373;
+.logo .logo-shape {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #1db954;
+  border-radius: 50%;
+  background: #fff;
+  margin-right: 5px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
 }
-
-.color--black {
-  color: #000;
-}
-
-.color--white {
-  color: #fff;
+.logo span {
+  color: #1db954;
+  text-align: center;
+  font-size: 1.25em;
+  display: inline-block;
+  vertical-align: sub;
 }
 
 .wrapper {
-  padding: 30px 20px;
+  padding: 30px;
 }
 
 .wrapper--vertical {
-  padding: 30px 0;
+  padding: 40px 0;
+}
+
+.button-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero {
@@ -133,12 +173,24 @@ a.pill:hover {
 }
 .hero .hero-content .holder {
   text-align: center;
-  margin: 20px auto;
+  margin: 35px auto;
+  padding: 0 20px;
 }
 
 nav {
   color: #000;
-  padding: 20px;
+  padding: 18px;
+  white-space: nowrap;
+  background: #fff;
+  z-index: 100;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+}
+@media (min-height: 300px) {
+  nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
 }
 nav ul {
   list-style: none;
@@ -147,19 +199,27 @@ nav ul {
 }
 nav li {
   display: inline-block;
-  margin: 0 15px;
+  margin: 0 0 0 25px;
+  vertical-align: text-bottom;
 }
 nav li:first-child {
   margin-left: 0;
 }
-nav li:last-child {
-  margin-left: 0;
+nav li a {
+  font-size: 90%;
 }
 
 footer {
-  background: #000;
   color: #fff;
-  padding: 80px 0 50px;
+  padding: 20px 0 100px;
+}
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+footer ul li {
+  margin: 0 0 5px;
 }
 
 .btn,
@@ -180,10 +240,10 @@ footer {
   cursor: pointer;
   font-size: inherit;
   padding: 0;
+  font-size: 90%;
 }
 
 .steps {
-  margin: 0 0 30px;
   padding: 0;
 }
 .steps li {
@@ -203,10 +263,10 @@ footer {
   }
 }
 .steps li .step-number {
-  background-color: #1ed760;
   height: 100px;
   width: 100px;
-  color: #fff;
+  color: #1ed760;
+  border: 4px solid #1ed760;
   border-radius: 50%;
   display: inline-block;
   text-align: center;
@@ -226,8 +286,8 @@ footer {
   display: flex;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 0 0 30px;
-  margin: 10px 0 0;
+  padding: 0 0 20px;
+  margin: 0 0 20px;
 }
 .carousel::before, .carousel::after {
   content: "";

@@ -1,0 +1,25 @@
+.color--jumbo {
+  color: #828286;
+}
+
+.color--gray {
+  color: #737373;
+}
+
+.color--black {
+  color: #000;
+}
+
+.color--white {
+  color: #fff;
+}
+
+.bkg--black {
+  background-color: #000;
+}
+
+.margin-bottom--lg {
+  margin-bottom: 20px;
+}
+
+/*# sourceMappingURL=utils.css.map */
