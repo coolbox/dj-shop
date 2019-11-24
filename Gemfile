@@ -51,8 +51,8 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "pry", "~> 0.12.2"
   gem "rack-mini-profiler"
-  gem "rubocop-rails"
   gem "rsense"
+  gem "rubocop-rails"
 end
 
 group :development do

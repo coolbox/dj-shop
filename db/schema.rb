@@ -25,21 +25,6 @@ ActiveRecord::Schema.define(version: 2019_09_24_201455) do
     t.index ["data"], name: "index_clicks_on_data", using: :gist
   end
 
-  create_table "tracks", force: :cascade do |t|
-    t.string "spotify_id", null: false
-    t.string "artist_name"
-    t.string "track_name"
-    t.string "itunes_url"
-    t.string "spotify_url"
-    t.string "spotify_image_url"
-    t.integer "duration_ms"
-    t.string "release_date"
-    t.string "release_date_precision"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["spotify_id"], name: "index_tracks_on_spotify_id", unique: true
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "provider"

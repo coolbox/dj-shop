@@ -64,19 +64,30 @@ nav {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
   }
 
   li {
-    display: inline-block;
-    margin: 0 0 0 25px;
-    vertical-align: text-bottom;
+    margin: 0;
+    display: flex;
 
-    &:first-child {
-      margin-left: 0;
+    &.nav-logo {
+      text-alig: center;
     }
 
     a {
-      font-size: 90%;
+      margin: 0;
+      padding: 0;
+    }
+
+    a, button {
+      img {
+        display: block;
+      }
     }
   }
 }

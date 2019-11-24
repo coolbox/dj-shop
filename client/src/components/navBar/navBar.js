@@ -12,16 +12,25 @@ class NavBar extends Component {
         {
           path: '/login',
           title: 'Login'
-        },
-        {
-          path: '/playlists',
-          title: 'Your playlists',
-          authenticated: true
         }
       ]
     }
     this.logOutButton = this.logOutButton.bind(this)
     this.handleLogout = this.handleLogout.bind(this)
+  }
+
+  menuButton () {
+    if(!Auth.loggedIn()){
+      return null;
+    }
+
+    return (
+      <li>
+        <a href='/' title='Cue - Menu'>
+          <img src='/icons/menu.svg' alt='Menu' />
+        </a>
+      </li>
+    )
   }
 
   logOutButton () {
@@ -34,7 +43,7 @@ class NavBar extends Component {
         <button
           className='btn-link'
           onClick={this.handleLogout}>
-          Log out
+          <img src='/icons/log-out.svg' alt='Log out' />
         </button>
       </li>
     )
@@ -50,7 +59,8 @@ class NavBar extends Component {
     return (
       <nav>
         <ul>
-          <li>
+          {this.menuButton()}
+          <li className='nav-logo'>
             <a href='/' title='Cue - Home'>
               <div className='logo'>
                 <div className='logo-shape'></div>

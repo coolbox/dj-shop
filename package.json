@@ -1,9 +1,13 @@
 {
   "name": "dj-shop",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:peteroome/dj-shop.git"
+  },
   "engines": {
     "node": "12.7.0",
-    "yarn": "1.17.3"
+    "yarn": "1.19.2"
   },
   "scripts": {
     "build": "yarn --cwd client build",
@@ -14,11 +18,13 @@
   "dependencies": {
     "delayed": "^2.0.0",
     "format-duration": "^1.3.1",
+    "http-proxy-middleware": "^0.20.0",
     "itunes-helper": "^1.0.5",
     "jwt-decode": "^2.2.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.0",
     "pluralize": "^8.0.0",
     "query-string": "^6.8.2",
+    "react": "^16.10.2",
     "react-router-dom": "^5.0.1",
     "sass": "^1.23.0",
     "underscore": "^1.9.1"
