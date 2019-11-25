@@ -3,13 +3,13 @@
 }
 
 .wrapper--vertical {
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 .button-holder {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .hero {
@@ -17,17 +17,17 @@
 }
 .hero video {
   height: auto;
-  max-height: 400px;
-  width: 100%;
   margin: 0 auto;
+  max-height: 400px;
   overflow: hidden;
   position: relative;
+  width: 100%;
   z-index: 1;
 }
 @media only screen and (min-width: 540px) {
   .hero video {
-    width: 100%;
     max-height: 100%;
+    width: 100%;
   }
 }
 .hero .hero-content {
@@ -42,42 +42,40 @@
 }
 
 nav {
+  background: #fff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
   color: #000;
   padding: 18px;
   white-space: nowrap;
-  background: #fff;
   z-index: 100;
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
 }
 @media (min-height: 300px) {
   nav {
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
   }
 }
 nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
-  align-items: center;
+  list-style: none;
 }
 nav li {
-  margin: 0;
   display: flex;
+  margin: 0;
 }
 nav li.nav-logo {
-  text-alig: center;
+  text-align: center;
 }
 nav li a {
   margin: 0;
   padding: 0;
 }
-nav li a img, nav li button img {
+nav li a img,
+nav li button img {
   display: block;
 }
 
@@ -87,8 +85,6 @@ footer {
 }
 footer ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 footer ul li {
   margin: 0 0 5px;

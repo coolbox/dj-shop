@@ -7,7 +7,7 @@ class Breadcrumbs extends Component {
     return (
       <ul className='breadcrumbs'>
         <li>
-          <Link to='/playlists'>Playlists</Link>
+          <Link to='/playlists'>Your playlists</Link>
         </li>
         <li>
           <Link

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import './index.scss';
 import { Layout } from '../../components/layout';
-
 import Track from '../../components/track';
 import Breadcrumbs from '../../components/breadcrumbs';
 import AuthHelperMethods from '../../components/authHelperMethods';
@@ -53,26 +53,16 @@ class Playlist extends Component {
       return (
         <div className='playlist'>
           <Breadcrumbs playlist={playlist} />
-          <h3>Playlist</h3>
           <h1>{playlist.name}</h1>
-          <img
-            src={playlist.images[0].url}
-            alt={playlist.name}
-            width='250'
-            height='250'
-          />
-          <h2>Tracks</h2>
-          <h2>{tracks.length} {songString}</h2>
           { loadingTracks && (<h3>Loading…</h3>) }
-          <ol>
+          <ul className='list'>
             {tracks.map((trackObject, index) => (
-              <li key={`track-${trackObject.track.id}-${index}`}>
-                <Track
-                  track={trackObject.track}
-                />
-              </li>
+              <Track
+                key={`track-${trackObject.track.id}-${index}`}
+                track={trackObject.track}
+              />
             ))}
-          </ol>
+          </ul>
         </div>
       )
     } else {
