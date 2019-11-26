@@ -1,9 +1,18 @@
+@charset "UTF-8";
 .wrapper {
   padding: 30px;
 }
 
 .wrapper--vertical {
-  padding: 20px 0;
+  padding: 32px 0;
+}
+
+.margin--bottom--m {
+  margin-bottom: 24px;
+}
+
+.padding--sides--m {
+  padding: 0 16px;
 }
 
 .button-holder {
@@ -88,6 +97,33 @@ footer ul {
 }
 footer ul li {
   margin: 0 0 5px;
+}
+
+.breadcrumbs {
+  color: #595959;
+  font-size: 0.8em;
+  line-height: 135%;
+  padding: 0 16px;
+}
+.breadcrumbs p {
+  color: #595959;
+  font-family: "Poppins", monospace;
+  font-weight: 500;
+}
+.breadcrumbs .breadcrumb {
+  display: inline-block;
+  margin: 0 4px 0 0;
+}
+.breadcrumbs .breadcrumb p::after {
+  content: "→";
+  margin-left: 4px;
+}
+.breadcrumbs .breadcrumb:last-child {
+  margin-right: 0;
+}
+.breadcrumbs .breadcrumb:last-child p::after {
+  content: "";
+  margin-left: 0;
 }
 
 /*# sourceMappingURL=layout.css.map */

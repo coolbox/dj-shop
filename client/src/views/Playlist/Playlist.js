@@ -47,15 +47,19 @@ class Playlist extends Component {
 
     if (playlist){
       const tracks = playlist.tracks.items
-      const songString = tracks.length > 1 ? 'songs' : 'song'
-      const loadingTracks = tracks.length !== playlist.track_count
+      const loadingTracks = tracks.length !== playlist.tracks.total
+      // const loadingTracks = tracks.length !== playlist.track_count
 
       return (
-        <div className='playlist'>
-          <Breadcrumbs playlist={playlist} />
+        <div className='wrapper--vertical playlist'>
+          <Breadcrumbs />
           <h1>{playlist.name}</h1>
-          { loadingTracks && (<h3>Loading…</h3>) }
-          <ul className='list'>
+          { loadingTracks && (
+            <h3 className='padding--sides--m bigger'>
+              Loading tracks…
+            </h3>
+          ) }
+          <ul className='list margin--bottom--m'>
             {tracks.map((trackObject, index) => (
               <Track
                 key={`track-${trackObject.track.id}-${index}`}
@@ -67,7 +71,10 @@ class Playlist extends Component {
       )
     } else {
       return (
-        <h1>Loading…</h1>
+        <div className='wrapper--vertical playlist'>
+          <Breadcrumbs />
+          <h1>Loading…</h1>
+        </div>
       )
     }
   }

@@ -1,1 +1,61 @@
-@import "../../styles/scss/variables.scss";
+@import '../../styles/scss/variables';
+
+.button {
+  a {
+    background: $apple-bkg-grey;
+    box-shadow: 0px 2px 3px -2px rgba(0, 0, 0, 0.25);
+    color: $apple-copy-grey;
+    display: inline-block;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 1em;
+    flex: 1;
+    padding: 0 5%;
+    text-align: center;
+    border-radius: 5px;
+    width: 90%;
+    line-height: 250%;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &.button--amazon {
+    a {
+      background: $amazon;
+      color: $white;
+    }
+  }
+
+  &.button--juno {
+    a {
+      background: $junodownload;
+      color: $white;
+    }
+  }
+
+  &.button--spotify {
+    a {
+      background: $spotify;
+      color: $white;
+    }
+  }
+}
+
+.button-holder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0 -5px;
+
+  > li {
+    flex: 1;
+    margin: 0 5px;
+  }
+}
+
+.logo-icon {
+  height: 18px;
+  vertical-align: sub;
+  width: 18px;
+}

@@ -75,15 +75,16 @@ class Playlists extends Component {
                   <div className='list-content'>
                     <div className='col-row'>
                       <h2>{playlist.name}</h2>
-                      <h3>Created by: <span>{playlist.owner}</span></h3>
+                      <h3>Created by: {playlist.owner}</h3>
                     </div>
                     <div className='col-row'>
-                      <Link
-                        className='button'
-                        to={`${this.props.match.url}/${playlist.id}`}
-                      >
-                        {playlist.track_count} {pluralize('song', playlist.track_count)}
-                      </Link>
+                      <div className='button'>
+                        <Link
+                          to={`${this.props.match.url}/${playlist.id}`}
+                        >
+                          {playlist.track_count} {pluralize('song', playlist.track_count)}
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </li>

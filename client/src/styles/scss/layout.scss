@@ -5,7 +5,15 @@
 }
 
 .wrapper--vertical {
-  padding: 20px 0;
+  padding: 32px 0;
+}
+
+.margin--bottom--m {
+  margin-bottom: 24px;
+}
+
+.padding--sides--m {
+  padding: 0 16px;
 }
 
 .button-holder {
@@ -99,6 +107,42 @@ footer {
 
     li {
       margin: 0 0 5px;
+    }
+  }
+}
+
+.breadcrumbs {
+  color: $breadcrumb-grey;
+  font-size: 0.8em;
+  line-height: 135%;
+  padding: 0 16px;
+
+  p {
+    color: $breadcrumb-grey;
+    font-family: 'Poppins', monospace;
+    font-weight: 500;
+  }
+
+  .breadcrumb {
+    display: inline-block;
+    margin: 0 4px 0 0;
+
+    p {
+      &::after {
+        content: '→';
+        margin-left: 4px;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      p {
+        &::after {
+          content: '';
+          margin-left: 0;
+        }
+      }
     }
   }
 }

@@ -102,15 +102,14 @@ class Track extends Component {
           </div>
           <div className='list-content'>
             <div className='col-row'>
-              <h2>{track.artist_names} <small>({track.track_time})</small></h2>
-              <h3>{track.name}</h3>
+              <h2>{track.artist_names}</h2>
+              <h3>{track.name} ({track.track_time})</h3>
             </div>
             <div className='col-row'>
               <ul className='button-holder'>
                 { track.itunes_url && (
-                  <li>
+                  <li className='button'>
                     <a
-                      className='button'
                       href={track.itunes_url}
                       onClick={this.handleClick}
                       title={`${track.name} - ${track.artist_names} iTunes link`}
@@ -119,16 +118,15 @@ class Track extends Component {
                       data-track-provider='itunes'
                     >
                       <img
-                        className='logo'
+                        className='logo-icon'
                         src='/icons/iconmonstr-apple-os-1.svg'
                         alt='Apple music'
                       />
                     </a>
                   </li>
                 ) }
-                <li>
+                <li className='button button--amazon'>
                   <a
-                    className='button'
                     href='/'
                     onClick={this.handleClick}
                     search={`${track.name} ${track.artist_names}`}
@@ -139,26 +137,24 @@ class Track extends Component {
                     data-track-provider='amazon'
                   >
                     <img
-                      className='logo'
+                      className='logo-icon'
                       src='/icons/iconmonstr-amazon-1.svg'
                       alt='Amazon music'
                     />
                   </a>
                 </li>
-                <li>
+                <li className='button button--juno'>
                   <a
-                    className='button'
                     href={`https://www.junodownload.com/search/?q[all][]=${track.name} ${track.artist_names}`}
                     onClick={this.handleClick}
                     title={`${track.name} - ${track.artist_names} Junodownload link`}
                     target='_blank'
                     rel="noopener noreferrer"
                     data-track-provider='junodownload'
-                  >Junodownload</a>
+                  >Juno</a>
                 </li>
-                <li>
+                <li className='button button--spotify'>
                   <a
-                    className='button'
                     href={track.spotify_url}
                     onClick={this.handleClick}
                     title={`${track.name} - ${track.artist_names} Spotify link`}
@@ -167,7 +163,7 @@ class Track extends Component {
                     data-track-provider='spotify'
                   >
                   <img
-                    className='logo'
+                    className='logo-icon'
                     src='/icons/iconmonstr-spotify-1.svg'
                     alt='Spotify'
                   />
