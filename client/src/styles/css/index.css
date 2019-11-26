@@ -144,6 +144,7 @@ p {
   color: #737373;
   font-family: "Anonymous Pro", monospace;
   margin: 0 0 10px;
+  line-height: 135%;
 }
 p:last-child {
   margin: 0;
@@ -208,12 +209,6 @@ a.pill:hover {
 
 .padding--sides--m {
   padding: 0 16px;
-}
-
-.button-holder {
-  align-items: center;
-  display: flex;
-  justify-content: center;
 }
 
 .hero {

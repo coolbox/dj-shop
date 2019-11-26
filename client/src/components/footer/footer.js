@@ -9,7 +9,7 @@ class Footer extends Component {
         <footer>
           <ul>
             <li>
-              <p>A <a href="http://peteroo.me" title="Tiny Tools">Tiny Tool</a></p>
+              <p>Built by <a href="http://peteroo.me" title="Pete Roome"><img className='glasses' src='/icons/glasses.svg' alt='Glasses logo' /></a></p>
             </li>
             <li>
               <p>Copyright {year}</p>

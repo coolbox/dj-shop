@@ -15,12 +15,6 @@
   padding: 0 16px;
 }
 
-.button-holder {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
 .hero {
   position: relative;
 }

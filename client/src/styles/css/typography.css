@@ -52,6 +52,7 @@ p {
   color: #737373;
   font-family: "Anonymous Pro", monospace;
   margin: 0 0 10px;
+  line-height: 135%;
 }
 p:last-child {
   margin: 0;

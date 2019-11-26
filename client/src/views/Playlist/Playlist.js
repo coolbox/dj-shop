@@ -48,7 +48,6 @@ class Playlist extends Component {
     if (playlist){
       const tracks = playlist.tracks.items
       const loadingTracks = tracks.length !== playlist.tracks.total
-      // const loadingTracks = tracks.length !== playlist.track_count
 
       return (
         <div className='wrapper--vertical playlist'>
