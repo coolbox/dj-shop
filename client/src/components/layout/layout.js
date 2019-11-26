@@ -6,11 +6,13 @@ function AppLayout(PageComponent) {
   class Layout extends Component {
     render() {
       return (
-        <article className='pageContent'>
+        <div id='outer-container'>
           <NavBar {...this.props} />
-          <PageComponent {...this.props} />
+          <main id='page-wrap'>
+            <PageComponent {...this.props} />
+          </main>
           <Footer {...this.props} />
-        </article>
+        </div>
       );
     }
   }

@@ -25,6 +25,7 @@
     "pluralize": "^8.0.0",
     "query-string": "^6.8.2",
     "react": "^16.10.2",
+    "react-burger-menu": "^2.6.12",
     "react-router-dom": "^5.0.1",
     "sass": "^1.23.0",
     "underscore": "^1.9.1"

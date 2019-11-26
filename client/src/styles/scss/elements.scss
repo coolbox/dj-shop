@@ -1,8 +1,6 @@
 .btn,
 .btn-link {
   color: $mountain-meadow;
-  font-family: 'Karla', sans-serif;
-  font-size: 12px;
 
   &:hover {
     color: $malachite;
@@ -16,7 +14,6 @@
   cursor: pointer;
   font-size: inherit;
   padding: 0;
-  font-size: 90%;
 }
 
 .steps {
