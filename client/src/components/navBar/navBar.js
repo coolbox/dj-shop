@@ -44,8 +44,16 @@ class NavBar extends Component {
             customCrossIcon={ <img src='/icons/x.svg' alt='CLose menu' /> }
           >
             <ul>
-              <li><span role='img' aria-label='headphones'>🎧</span> <Link to='/playlists'>Your playlists</Link></li>
-              <li>{this.logOutButton()}</li>
+              <li>
+                <span role='img' aria-label='headphones'>🎧</span> <Link to='/playlists'>Your playlists</Link>
+              </li>
+              {Auth.loggedIn() ? (
+                <li>{this.logOutButton()}</li>
+              ) : (
+                <li>
+                  <a href='/login' title='Login'>Login</a>
+                </li>
+              )}
             </ul>
           </Menu>
           <div className='logo-holder'>
