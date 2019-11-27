@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './index.scss';
-import { Layout } from '../../components/layout';
-import Track from '../../components/track';
-import Breadcrumbs from '../../components/breadcrumbs';
-import AuthHelperMethods from '../../components/authHelperMethods';
+import { Layout } from 'components/layout';
+import Track from 'components/track';
+import Breadcrumbs from 'components/breadcrumbs';
+import AuthHelperMethods from 'components/authHelperMethods';
 
 const Auth = new AuthHelperMethods();
 

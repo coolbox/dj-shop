@@ -40,7 +40,7 @@ class NavBar extends Component {
           <Menu
             pageWrapId={'page-wrap'}
             outerContainerId={'outer-container'}
-            customBurgerIcon={ <img src="/icons/menu.svg" /> }
+            customBurgerIcon={ <img src="/icons/menu.svg" alt='Menu'/> }
           >
             <ul>
               <li><span role="img" aria-label="headphones">🎧</span> <Link to='/playlists'>Your playlists</Link></li>

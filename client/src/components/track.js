@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import format from 'format-duration';
-import AuthHelperMethods from '../components/authHelperMethods';
+import AuthHelperMethods from 'components/authHelperMethods';
 
 const itunes = require('itunes-helper')
 const Auth = new AuthHelperMethods();

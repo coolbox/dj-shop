@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout } from '../../components/layout';
+import { Layout } from 'components/layout';
 
 class Home extends Component {
   componentDidMount () {
@@ -17,7 +17,7 @@ class Home extends Component {
           <div className='hero-content'>
             <div className='holder'>
               <h1>Spotify playlists to your decks, faster.</h1>
-              <a className='pill' title='Log in'>Get started</a>
+              <a href="/" className='pill' title='Log in'>Get started</a>
             </div>
           </div>
         </div>
@@ -39,7 +39,13 @@ class Home extends Component {
           </ul>
 
           <div class='button-holder'>
-            <a className='pill margin-bottom--lg' title='Log in'>Connect to Spotify</a>
+            <a
+              href='/'
+              className='pill margin-bottom--lg'
+              title='Log in'
+            >
+              Connect to Spotify
+            </a>
           </div>
         </div>
         <div className='wrapper--vertical bkg-color--jumbo'>
@@ -70,7 +76,13 @@ class Home extends Component {
           </div>
 
           <div class='button-holder'>
-            <a className='pill margin-bottom--lg' title='Log in'>Connect to Spotify</a>
+            <a
+              href='/'
+              className='pill margin-bottom--lg'
+              title='Log in'
+            >
+              Connect to Spotify
+            </a>
           </div>
         </div>
       </div>

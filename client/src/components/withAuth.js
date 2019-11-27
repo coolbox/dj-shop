@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
 import qs from "qs";
 
-import AuthHelperMethods from './authHelperMethods';
+import AuthHelperMethods from 'components/authHelperMethods';
 
 /*
   A higher order component is frequently written as a function that returns
