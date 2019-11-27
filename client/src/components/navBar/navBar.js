@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { slide as Menu } from 'react-burger-menu'
 import AuthHelperMethods from '../authHelperMethods';
 
@@ -22,7 +22,7 @@ class NavBar extends Component {
       <button
         className='btn-link'
         onClick={this.handleLogout}>
-        <span role="img" aria-label="waving hand">👋</span> Log out
+        <span role='img' aria-label='waving hand'>👋</span> Log out
       </button>
     )
   }
@@ -40,10 +40,11 @@ class NavBar extends Component {
           <Menu
             pageWrapId={'page-wrap'}
             outerContainerId={'outer-container'}
-            customBurgerIcon={ <img src="/icons/menu.svg" alt='Menu'/> }
+            customBurgerIcon={ <img src='/icons/menu.svg' alt='Menu'/> }
+            customCrossIcon={ <img src='/icons/x.svg' alt='CLose menu' /> }
           >
             <ul>
-              <li><span role="img" aria-label="headphones">🎧</span> <Link to='/playlists'>Your playlists</Link></li>
+              <li><span role='img' aria-label='headphones'>🎧</span> <Link to='/playlists'>Your playlists</Link></li>
               <li>{this.logOutButton()}</li>
             </ul>
           </Menu>

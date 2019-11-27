@@ -110,9 +110,9 @@ header {
 }
 
 .logo-holder {
-  text-align: center;
-  padding: 18px;
   line-height: 135%;
+  padding: 18px;
+  text-align: center;
 
   a {
     display: inline-block;
@@ -128,59 +128,51 @@ header {
 }
 
 // Color/shape of burger icon bars
-.bm-burger-bars {
-  background: #373a47;
-}
+// .bm-burger-bars {
+// }
 
 // Color/shape of burger icon bars on hove
-.bm-burger-bars-hover {
-  background: #a90000;
-}
+// .bm-burger-bars-hover {
+// }
 
 // Position and sizing of clickable cross button
-.bm-cross-button {
-  height: 24px;
-  width: 24px;
-}
+// .bm-cross-button {
+// }
 
 // Color/shape of close button cross
 .bm-cross {
-  background: #bdc3c7;
+  right: 16px;
+  top: 16px;
 }
 
-/*
-Sidebar wrapper styles
-Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-*/
+// Sidebar wrapper styles
+// Note: Beware of modifying this element as it can break the animations -
+// you should not need to touch it in most cases
 .bm-menu-wrap {
-  position: fixed;
   height: 100%;
+  position: fixed;
 }
 
 // General sidebar styles
 .bm-menu {
   background: $white;
-  padding: 2.5em 1em 0;
   font-size: 1.4em;
-}
+  padding: 2.5em 1em 0;
 
-// Custom
-.bm-menu ul {
-  li {
-    margin: 0 0 10px;
+  ul {
+    li {
+      margin: 0 0 10px;
+    }
   }
 }
 
 // Morph shape necessary with bubble or elastic
-.bm-morph-shape {
-  fill: #373a47;
-}
+// .bm-morph-shape {
+// }
 
 // Wrapper for item list
-.bm-item-list {
-  color: #b8b7ad;
-  padding: 0.8em;
-}
+// .bm-item-list {
+// }
 
 // Individual item
 .bm-item {
@@ -189,5 +181,5 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 // Styling of overlay
 .bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
+  background: $overlay-grey;
 }
