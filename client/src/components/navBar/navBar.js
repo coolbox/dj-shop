@@ -9,8 +9,47 @@ class NavBar extends Component {
   constructor (props) {
     super(props)
 
+    this.state = {
+      menuItems: []
+    }
+
+    this.setMenuItems = this.setMenuItems.bind(this)
     this.logOutButton = this.logOutButton.bind(this)
     this.handleLogout = this.handleLogout.bind(this)
+  }
+
+  componentDidMount () {
+    this.setMenuItems()
+  }
+
+  setMenuItems () {
+    if (Auth.loggedIn()){
+      this.setState({
+        menuItems: [
+          {
+            emoji: '🎧',
+            emojiLabel: 'headphones',
+            path: '/playlists',
+            label: 'Your playlists'
+          },
+          {
+            emoji: '👋',
+            emojiLabel: 'waving hand',
+            path: '/logout',
+            label: 'Log out'
+          }
+        ]
+      })
+    } else {
+      this.setState({
+        menuItems: [{
+          emoji: '👐',
+          emojiLabel: 'open hands',
+          path: '/login',
+          label: 'Login'
+        }]
+      })
+    }
   }
 
   logOutButton () {
@@ -44,16 +83,15 @@ class NavBar extends Component {
             customCrossIcon={ <img src='/icons/x.svg' alt='CLose menu' /> }
           >
             <ul>
-              <li>
-                <span role='img' aria-label='headphones'>🎧</span> <Link to='/playlists'>Your playlists</Link>
-              </li>
-              {Auth.loggedIn() ? (
-                <li>{this.logOutButton()}</li>
-              ) : (
-                <li>
-                  <a href='/login' title='Login'>Login</a>
-                </li>
-              )}
+              {
+                this.state.menuItems.map(function(menuItem, index){
+                  return(
+                    <li key={index}>
+                      <span role='img' aria-label={menuItem.emojiLabel}>{menuItem.emoji}</span> <Link to={menuItem.path}>{menuItem.label}</Link>
+                    </li>
+                  )
+                })
+              }
             </ul>
           </Menu>
           <div className='logo-holder'>
