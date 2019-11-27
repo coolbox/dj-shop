@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import format from 'format-duration';
-import AuthHelperMethods from '../components/authHelperMethods';
+import AuthHelperMethods from 'components/authHelperMethods';
 
 const itunes = require('itunes-helper')
 const Auth = new AuthHelperMethods();
@@ -93,62 +93,86 @@ class Track extends Component {
 
     if (track){
       return (
-        <div>
-          <img
-            src={track.album_image}
-            alt={`${track.name} - ${track.artist_names} artwork`}
-            width='100'
-            height='100'
-          />
-          <p>{track.name} - {track.artist_names} <small>({track.track_time})</small></p>
-          <p>Search for track</p>
-          <ul>
-            { track.itunes_url && (
-              <li>
-                <a
-                  href={track.itunes_url}
-                  onClick={this.handleClick}
-                  title={`${track.name} - ${track.artist_names} iTunes link`}
-                  target='_blank'
-                  rel="noopener noreferrer"
-                  data-track-provider='itunes'
-                >iTunes</a>
-              </li>
-            ) }
-            <li>
-              <a
-                href='#'
-                onClick={this.handleClick}
-                search={`${track.name} ${track.artist_names}`}
-                type='amzn'
-                title={`${track.name} - ${track.artist_names} Amazon link`}
-                target='_blank'
-                rel="noopener noreferrer"
-                data-track-provider='amazon'
-              >Amazon</a>
-            </li>
-            <li>
-              <a
-                href={`https://www.junodownload.com/search/?q[all][]=${track.name} ${track.artist_names}`}
-                onClick={this.handleClick}
-                title={`${track.name} - ${track.artist_names} Junodownload link`}
-                target='_blank'
-                rel="noopener noreferrer"
-                data-track-provider='junodownload'
-              >Junodownload</a>
-            </li>
-            <li>
-              <a
-                href={track.spotify_url}
-                onClick={this.handleClick}
-                title={`${track.name} - ${track.artist_names} Spotify link`}
-                target='_blank'
-                rel="noopener noreferrer"
-                data-track-provider='spotify'
-              >Spotify</a>
-            </li>
-          </ul>
-        </div>
+        <li>
+          <div className='list-artwork'>
+            <img
+              src={track.album_image}
+              alt={`${track.name} - ${track.artist_names} artwork`}
+            />
+          </div>
+          <div className='list-content'>
+            <div className='col-row'>
+              <h2>{track.artist_names}</h2>
+              <h3>{track.name} ({track.track_time})</h3>
+            </div>
+            <div className='col-row'>
+              <ul className='button-holder'>
+                { track.itunes_url && (
+                  <li className='button'>
+                    <a
+                      href={track.itunes_url}
+                      onClick={this.handleClick}
+                      title={`${track.name} - ${track.artist_names} iTunes link`}
+                      target='_blank'
+                      rel="noopener noreferrer"
+                      data-track-provider='itunes'
+                    >
+                      <img
+                        className='logo-icon'
+                        src='/icons/iconmonstr-apple-os-1.svg'
+                        alt='Apple music'
+                      />
+                    </a>
+                  </li>
+                ) }
+                <li className='button button--amazon'>
+                  <a
+                    href='/'
+                    onClick={this.handleClick}
+                    search={`${track.name} ${track.artist_names}`}
+                    type='amzn'
+                    title={`${track.name} - ${track.artist_names} Amazon link`}
+                    target='_blank'
+                    rel="noopener noreferrer"
+                    data-track-provider='amazon'
+                  >
+                    <img
+                      className='logo-icon'
+                      src='/icons/iconmonstr-amazon-1.svg'
+                      alt='Amazon music'
+                    />
+                  </a>
+                </li>
+                <li className='button button--juno'>
+                  <a
+                    href={`https://www.junodownload.com/search/?q[all][]=${track.name} ${track.artist_names}`}
+                    onClick={this.handleClick}
+                    title={`${track.name} - ${track.artist_names} Junodownload link`}
+                    target='_blank'
+                    rel="noopener noreferrer"
+                    data-track-provider='junodownload'
+                  >Juno</a>
+                </li>
+                <li className='button button--spotify'>
+                  <a
+                    href={track.spotify_url}
+                    onClick={this.handleClick}
+                    title={`${track.name} - ${track.artist_names} Spotify link`}
+                    target='_blank'
+                    rel="noopener noreferrer"
+                    data-track-provider='spotify'
+                  >
+                  <img
+                    className='logo-icon'
+                    src='/icons/iconmonstr-spotify-1.svg'
+                    alt='Spotify'
+                  />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
       )
     } else {
       return (

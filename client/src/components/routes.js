@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Switch } from "react-router-dom";
 
-import WithAuth from './withAuth';
-import MakeRouteWithSubRoutes from './makeRouteWithSubRoutes';
+import WithAuth from 'components/withAuth';
+import MakeRouteWithSubRoutes from 'components/makeRouteWithSubRoutes';
 
-import { Home } from '../views/home';
-import { Playlists } from '../views/playlists';
-import { Playlist } from '../views/playlist';
-import { NoMatch } from '../views/noMatch';
-import { Login } from '../views/login';
+import { Home } from 'views/Home';
+import { Login } from 'views/Login';
+import { NoMatch } from 'views/NoMatch';
+import { Playlists } from 'views/Playlists';
+import { Playlist } from 'views/Playlist';
 
 class Routes extends Component {
   constructor () {

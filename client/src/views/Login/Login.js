@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Layout from '../../components/layout/layout';
+import Layout from 'components/layout/layout';
 
 class Login extends Component {
   render() {

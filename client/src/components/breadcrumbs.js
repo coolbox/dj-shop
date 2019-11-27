@@ -3,18 +3,13 @@ import { Link } from "react-router-dom";
 
 class Breadcrumbs extends Component {
   render() {
-    const playlist = this.props.playlist
     return (
       <ul className='breadcrumbs'>
-        <li>
-          <Link to='/playlists'>Playlists</Link>
+        <li className='breadcrumb'>
+          <p><Link to='/playlists'>Your playlists</Link></p>
         </li>
-        <li>
-          <Link
-            to={`/playlists/${playlist.id}`}
-            title={playlist.name}>
-            {playlist.name}
-          </Link>
+        <li className='breadcrumb'>
+          <p>Playlist</p>
         </li>
       </ul>
     )

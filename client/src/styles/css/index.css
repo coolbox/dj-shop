@@ -1,87 +1,69 @@
+@charset "UTF-8";
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-family: "helvetica", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   line-height: 130%;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Karla", sans-serif;
-  font-weight: 700;
-  line-height: 125%;
-}
-
-h1 {
-  font-size: 3em;
-  line-height: 130%;
-  margin: 0 0 24px;
-  color: #fff;
-  text-align: center;
-}
-@media only screen and (min-width: 540px) {
-  h1 {
-    font-size: 2.4em;
-  }
-}
-
-h2 {
-  text-align: center;
-  font-size: 3em;
-  margin: 0 auto 30px;
-  width: 75%;
-}
-@media only screen and (min-width: 540px) {
-  h2 {
-    font-size: 2.4em;
-    width: 100%;
-  }
-}
-
-h3 {
-  font-size: 1.2em;
-  font-weight: normal;
-}
-
-h4 {
-  margin: 0 0 5px;
-  line-height: 135%;
-  font-size: 1.2em;
-}
-
-p {
-  margin: 0 0 10px;
-  color: #737373;
-}
-p:last-child {
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-a {
-  color: #1db954;
-  font-family: "Karla", sans-serif;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
 }
-a:hover {
-  color: #1ed760;
-  text-decoration: none;
-  cursor: pointer;
+
+body {
+  line-height: 1;
 }
-a.pill {
-  background-color: #1db954;
-  border-radius: 20px;
-  border: 1px solid #1db954;
-  padding: 10px 28px;
-  font-size: 90%;
-  color: #fff;
+
+ol, ul {
+  list-style: none;
 }
-a.pill:hover {
-  background-color: #1ed760;
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 .color--jumbo {
@@ -100,12 +82,133 @@ a.pill:hover {
   color: #fff;
 }
 
+.bkg--black {
+  background-color: #000;
+}
+
+.margin-bottom--lg {
+  margin-bottom: 20px;
+}
+
+h1,
+h2 {
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0;
+}
+
+h1 {
+  font-family: "Anonymous Pro", monospace;
+  font-size: 1.8em;
+  line-height: 130%;
+  margin: 0 0 32px;
+  padding: 0 16px;
+}
+@media only screen and (min-width: 540px) {
+  h1 {
+    font-size: 2.4em;
+  }
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+h3,
+h4 {
+  font-family: "Anonymous Pro", monospace;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0;
+}
+
+h3 {
+  font-size: 0.9em;
+}
+h3.bigger {
+  font-size: 1em;
+}
+
+h4 {
+  font-size: 1.2em;
+  line-height: 135%;
+  margin: 0 0 5px;
+}
+
+p {
+  color: #737373;
+  font-family: "Anonymous Pro", monospace;
+  margin: 0 0 10px;
+  line-height: 135%;
+}
+p:last-child {
+  margin: 0;
+}
+
+a {
+  color: #1db954;
+  font-family: "Karla", sans-serif;
+  text-decoration: none;
+}
+a:hover {
+  color: #1ed760;
+  text-decoration: none;
+  cursor: pointer;
+}
+a.pill {
+  background-color: #1db954;
+  border-radius: 20px;
+  border: 1px solid #1db954;
+  padding: 10px 28px;
+  font-size: 90%;
+  color: #fff;
+}
+a.pill:hover {
+  background-color: #1ed760;
+}
+
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+}
+.logo .logo-shape {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #1db954;
+  border-radius: 50%;
+  background: #fff;
+  margin-right: 5px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+}
+.logo span {
+  color: #1db954;
+  text-align: center;
+  font-size: 1.25em;
+  display: inline-block;
+  vertical-align: sub;
+}
+
 .wrapper {
-  padding: 30px 20px;
+  padding: 30px;
 }
 
 .wrapper--vertical {
-  padding: 30px 0;
+  padding: 32px 0;
+}
+
+.margin--bottom--m {
+  margin-bottom: 24px;
+}
+
+.padding--sides--m {
+  padding: 0 16px;
 }
 
 .hero {
@@ -113,17 +216,17 @@ a.pill:hover {
 }
 .hero video {
   height: auto;
-  max-height: 400px;
-  width: 100%;
   margin: 0 auto;
+  max-height: 400px;
   overflow: hidden;
   position: relative;
+  width: 100%;
   z-index: 1;
 }
 @media only screen and (min-width: 540px) {
   .hero video {
-    width: 100%;
     max-height: 100%;
+    width: 100%;
   }
 }
 .hero .hero-content {
@@ -133,40 +236,114 @@ a.pill:hover {
 }
 .hero .hero-content .holder {
   text-align: center;
-  margin: 20px auto;
-}
-
-nav {
-  color: #000;
-  padding: 20px;
-}
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-nav li {
-  display: inline-block;
-  margin: 0 15px;
-}
-nav li:first-child {
-  margin-left: 0;
-}
-nav li:last-child {
-  margin-left: 0;
+  margin: 35px auto;
+  padding: 0 20px;
 }
 
 footer {
-  background: #000;
   color: #fff;
-  padding: 80px 0 50px;
+  padding: 20px 0 100px;
+}
+footer ul {
+  list-style: none;
+}
+footer ul li {
+  margin: 0 0 5px;
+}
+
+.breadcrumbs {
+  color: #595959;
+  font-size: 0.8em;
+  line-height: 135%;
+  padding: 0 16px;
+}
+.breadcrumbs p {
+  color: #595959;
+  font-family: "Poppins", monospace;
+  font-weight: 500;
+}
+.breadcrumbs .breadcrumb {
+  display: inline-block;
+  margin: 0 4px 0 0;
+}
+.breadcrumbs .breadcrumb p::after {
+  content: "→";
+  margin-left: 4px;
+}
+.breadcrumbs .breadcrumb:last-child {
+  margin-right: 0;
+}
+.breadcrumbs .breadcrumb:last-child p::after {
+  content: "";
+  margin-left: 0;
+}
+
+header {
+  background: #fff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+  color: #000;
+  white-space: nowrap;
+  z-index: 100;
+}
+@media (min-height: 300px) {
+  header {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.logo-holder {
+  text-align: center;
+  padding: 18px;
+  line-height: 135%;
+}
+.logo-holder a {
+  display: inline-block;
+}
+
+.bm-burger-button {
+  left: 16px;
+  position: fixed;
+  top: 17px;
+}
+
+.bm-burger-bars {
+  background: #373a47;
+}
+
+.bm-burger-bars-hover {
+  background: #a90000;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+.bm-menu {
+  background: #fff;
+  font-size: 1.4em;
+  padding: 2.5em 1em 0;
+}
+.bm-menu ul li {
+  margin: 0 0 10px;
+}
+
+.bm-item {
+  display: inline-block;
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .btn,
 .btn-link {
   color: #1db954;
-  font-family: "Karla", sans-serif;
-  font-size: 12px;
 }
 .btn:hover,
 .btn-link:hover {
@@ -183,7 +360,6 @@ footer {
 }
 
 .steps {
-  margin: 0 0 30px;
   padding: 0;
 }
 .steps li {
@@ -203,10 +379,10 @@ footer {
   }
 }
 .steps li .step-number {
-  background-color: #1ed760;
   height: 100px;
   width: 100px;
-  color: #fff;
+  color: #1ed760;
+  border: 4px solid #1ed760;
   border-radius: 50%;
   display: inline-block;
   text-align: center;
@@ -226,8 +402,8 @@ footer {
   display: flex;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 0 0 30px;
-  margin: 10px 0 0;
+  padding: 0 0 20px;
+  margin: 0 0 20px;
 }
 .carousel::before, .carousel::after {
   content: "";
@@ -264,39 +440,6 @@ footer {
 }
 .bkg-color--jumbo {
   background-color: #fafafa;
-}
-
-.playlists,
-.playlist {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.playlist {
-  height: 400px;
-  width: 300px;
-  display: inline-block;
-  box-shadow: 0 0 5px 5px #ddd;
-}
-
-.playlist .top {
-  background-size: cover;
-  background-position: center;
-  outline: thin solid red;
-  display: block;
-  height: 80%;
-}
-
-.playlist .top a {
-  display: block;
-}
-
-.playlist .bottom {
-  background-color: #fff;
-  padding: 15px;
-  outline: thin solid green;
-  text-align: left;
 }
 
 /*# sourceMappingURL=index.css.map */

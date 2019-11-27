@@ -37,6 +37,7 @@ class PlaylistsController < ApplicationController
       spotify_url: p["uri"],
       cover_url: p["images"].empty? ? nil : p["images"][0]["url"],
       name: p["name"],
+      owner: p["owner"].empty? ? "Unknown" : p["owner"]["display_name"],
       track_count: p["tracks"]["total"],
       tracks: p["tracks"]["items"]
     }

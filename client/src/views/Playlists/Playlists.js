@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Layout } from '../../components/layout';
+import './index.scss';
+import { Layout } from 'components/layout';
 import { Link } from "react-router-dom";
 import pluralize from "pluralize";
 
-import AuthHelperMethods from '../../components/authHelperMethods';
+import AuthHelperMethods from 'components/authHelperMethods';
 
 const Auth = new AuthHelperMethods();
 
@@ -56,27 +57,35 @@ class Playlists extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Playlists</h1>
-        <ul className='playlists'>
+      <div className='wrapper--vertical'>
+        <h1>Your playlists</h1>
+        <ul className='list'>
           {
             this.state.playlists.map(
               (playlist, index) =>
-                <li key={playlist.id} className='playlist'>
-                  <Link to={`${this.props.match.url}/${playlist.id}`}>
-                    <div
-                      className='top'
-                      style={{backgroundImage: `url(${playlist.cover_url})`}}
-                    >
-                    </div>
-                  </Link>
-                  <div className='bottom'>
+                <li key={playlist.id}>
+                  <div className='list-artwork'>
                     <Link to={`${this.props.match.url}/${playlist.id}`}>
-                      <h1>{playlist.name}</h1>
+                      <img
+                        src={playlist.cover_url}
+                        alt='{playlist.name}'
+                      />
                     </Link>
-                    <h3>
-                      {playlist.track_count} {pluralize('song', playlist.track_count)}
-                    </h3>
+                  </div>
+                  <div className='list-content'>
+                    <div className='col-row'>
+                      <h2>{playlist.name}</h2>
+                      <h3>Created by: {playlist.owner}</h3>
+                    </div>
+                    <div className='col-row'>
+                      <div className='button'>
+                        <Link
+                          to={`${this.props.match.url}/${playlist.id}`}
+                        >
+                          {playlist.track_count} {pluralize('song', playlist.track_count)}
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </li>
             )

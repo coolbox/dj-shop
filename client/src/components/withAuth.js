@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
 import qs from "qs";
 
-import AuthHelperMethods from './authHelperMethods';
+import AuthHelperMethods from 'components/authHelperMethods';
 
 /*
   A higher order component is frequently written as a function that returns
@@ -21,7 +21,7 @@ export default function withAuth(AuthComponent) {
       };
 
       /*
-        In the componentDid<ount, we would want to do a couple of
+        In the componentDidMount, we would want to do a couple of
         important tasks in order to verify the current users authentication status
         prior to granting them enterance into the app.
       */

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout } from '../../components/layout';
+import { Layout } from 'components/layout';
 
 class Home extends Component {
   componentDidMount () {
@@ -17,13 +17,13 @@ class Home extends Component {
           <div className='hero-content'>
             <div className='holder'>
               <h1>Spotify playlists to your decks, faster.</h1>
-              <a className='pill' title='Log in'>Get started</a>
+              <a href="/" className='pill' title='Log in'>Get started</a>
             </div>
           </div>
         </div>
         <div className='wrapper'>
           <h2>Prepare your next DJ set</h2>
-          <ul className='steps'>
+          <ul className='steps margin-bottom--lg'>
             <li>
               <span className='step-number'>1</span>
               <h3>Create your Spotify playlist</h3>
@@ -37,11 +37,21 @@ class Home extends Component {
               <h3>Buy your tracks</h3>
             </li>
           </ul>
+
+          <div class='button-holder'>
+            <a
+              href='/'
+              className='pill margin-bottom--lg'
+              title='Log in'
+            >
+              Connect to Spotify
+            </a>
+          </div>
         </div>
         <div className='wrapper--vertical bkg-color--jumbo'>
           <h2 className='color--jumbo'>Recently purchased</h2>
           <div className="carousel-wrap">
-            <ul className="carousel">
+            <ul className="carousel margin-bottom--lg">
               <li className="carousel-card">
                 <img src='/images/album-test.jpg' alt='Album artwork' />
                 <h4>Hello World</h4>
@@ -63,6 +73,16 @@ class Home extends Component {
                 <p>Foo bar</p>
               </li>
             </ul>
+          </div>
+
+          <div class='button-holder'>
+            <a
+              href='/'
+              className='pill margin-bottom--lg'
+              title='Log in'
+            >
+              Connect to Spotify
+            </a>
           </div>
         </div>
       </div>

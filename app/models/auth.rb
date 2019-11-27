@@ -3,13 +3,13 @@
 class Auth
   def self.encode_uid(user_id)
     payload = { user_id: user_id }
-    JWT.encode(payload, ENV["AUTH_SECRET"], "HS256")
+    JWT.encode(payload, ENV["SPOTIFY_CLIENT_SECRET"], "HS256")
   end
 
   def self.decode_uid(token)
     payload = JWT.decode(
       token,
-      ENV["AUTH_SECRET"],
+      ENV["SPOTIFY_CLIENT_SECRET"],
       true,
       algorithm: "HS256"
     )

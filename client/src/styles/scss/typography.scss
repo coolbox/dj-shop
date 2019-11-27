@@ -1,19 +1,18 @@
 @import 'variables';
 
 h1,
-h2,
-h3 {
-  font-family: 'Karla', sans-serif;
-  font-weight: 700;
-  line-height: 125%;
+h2 {
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0;
 }
 
 h1 {
-  font-size: 3em;
+  font-family: 'Anonymous Pro', monospace;
+  font-size: 1.8em;
   line-height: 130%;
-  margin: 0 0 24px;
-  color: $white;
-  text-align: center;
+  margin: 0 0 32px;
+  padding: 0 16px;
 
   @media only screen and (min-width: $medium-screen) {
     font-size: 2.4em;
@@ -21,31 +20,45 @@ h1 {
 }
 
 h2 {
-  text-align: center;
-  font-size: 3em;
-  margin: 0 auto 30px;
-  width: 75%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 4px;
 
   @media only screen and (min-width: $medium-screen) {
-    font-size: 2.4em;
-    width: 100%;
   }
 }
 
+h3,
+h4 {
+  font-family: 'Anonymous Pro', monospace;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0;
+}
+
 h3 {
-  font-size: 1.2em;
-  font-weight: normal;
+  font-size: 0.9em;
+
+  &.bigger {
+    font-size: 1em;
+  }
 }
 
 h4 {
-  margin: 0 0 5px;
-  line-height: 135%;
   font-size: 1.2em;
+  line-height: 135%;
+  margin: 0 0 5px;
 }
 
 p {
-  margin: 0 0 10px;
   color: $gray;
+  font-family: 'Anonymous Pro', monospace;
+  margin: 0 0 10px;
+  line-height: 135%;
 
   &:last-child {
     margin: 0;
@@ -55,6 +68,7 @@ p {
 a {
   color: $mountain-meadow;
   font-family: 'Karla', sans-serif;
+  text-decoration: none;
 
   &:hover {
     color: $malachite;
@@ -76,18 +90,27 @@ a {
   }
 }
 
-.color--jumbo {
-  color: $jumbo;
-}
+.logo {
+  display: inline-block;
+  vertical-align: middle;
 
-.color--gray {
-  color: $gray;
-}
+  .logo-shape {
+    width: 14px;
+    height: 14px;
+    border: 2px solid $mountain-meadow;
+    border-radius: 50%;
+    background: $white;
+    margin-right: 5px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+  }
 
-.color--black {
-  color: $black;
-}
-
-.color--white {
-  color: $white;
+  span {
+    color: $mountain-meadow;
+    text-align: center;
+    font-size: 1.25em;
+    display: inline-block;
+    vertical-align: sub;
+  }
 }

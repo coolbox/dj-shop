@@ -1,34 +1,3 @@
-.playlists,
-.playlist {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
 
-.playlist {
-  height: 400px;
-  width: 300px;
-  display: inline-block;
-  box-shadow: 0 0 5px 5px #ddd;
-}
-
-.playlist .top {
-  background-size: cover;
-  background-position: center;
-  outline: thin solid red;
-  display: block;
-  height: 80%;
-}
-
-.playlist .top a {
-  display: block;
-}
-
-.playlist .bottom {
-  background-color: #fff;
-  padding: 15px;
-  outline: thin solid green;
-  text-align: left;
-}
 
 /*# sourceMappingURL=card.css.map */

@@ -5,18 +5,18 @@ class Footer extends Component {
     const date = new Date()
     const year = date.getFullYear()
     return (
-      <footer>
-        <div className='wrapper'>
+      <div className='wrapper bkg--black'>
+        <footer>
           <ul>
             <li>
-              <p>By <a href="https://peteroo.me" title="Pete Roome">Pete Roome</a></p>
+              <p>Built by <a href="http://peteroo.me" title="Pete Roome"><img className='glasses' src='/icons/glasses.svg' alt='Glasses logo' /></a></p>
             </li>
             <li>
               <p>Copyright {year}</p>
             </li>
           </ul>
-        </div>
-      </footer>
+        </footer>
+      </div>
     )
   }
 }

@@ -38,7 +38,7 @@ gem "jwt", "~> 2.2.1"
 # gem 'capistrano-rails', group: :development
 
 # Authentication
-gem "devise", "~> 4.6.2"
+gem "devise", "~> 4.7.1"
 gem "omniauth-oauth2", "~> 1.3.1"
 gem "omniauth-spotify", "~> 0.0.13"
 
@@ -51,8 +51,8 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "pry", "~> 0.12.2"
   gem "rack-mini-profiler"
-  gem "rubocop-rails"
   gem "rsense"
+  gem "rubocop-rails"
 end
 
 group :development do
