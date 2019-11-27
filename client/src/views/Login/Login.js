@@ -4,7 +4,7 @@ import Layout from 'components/layout/layout';
 class Login extends Component {
   render() {
     return (
-      <div>
+      <div className='wrapper--vertical'>
         <h1>Login</h1>
         <form>
           <button

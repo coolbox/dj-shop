@@ -34,14 +34,25 @@
   }
 }
 .hero .hero-content {
-  position: absolute;
+  color: #fff;
   z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
   top: 0;
+  height: 100%;
+  width: 100%;
 }
 .hero .hero-content .holder {
-  text-align: center;
-  margin: 35px auto;
   padding: 0 20px;
+  text-align: center;
+}
+.hero .hero-content h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.9em;
+  font-weight: bold;
+  padding: 0;
 }
 
 footer {
@@ -63,7 +74,7 @@ footer ul li {
 }
 .breadcrumbs p {
   color: #595959;
-  font-family: "Poppins", monospace;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
 .breadcrumbs .breadcrumb {
