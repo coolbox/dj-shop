@@ -1,3 +1,15 @@
+.font--family-1 {
+  font-family: "Poppins", sans-serif;
+}
+
+.font-size--md {
+  font-size: 1.4em;
+}
+
+.font-size--lg {
+  font-size: 1.6em;
+}
+
 .color--jumbo {
   color: #828286;
 }
@@ -18,8 +30,16 @@
   background-color: #000;
 }
 
-.margin-bottom--lg {
+.margin-bottom--md {
   margin-bottom: 20px;
+}
+
+.margin-bottom--lg {
+  margin-bottom: 30px;
+}
+
+.text--center {
+  text-align: center;
 }
 
 /*# sourceMappingURL=utils.css.map */

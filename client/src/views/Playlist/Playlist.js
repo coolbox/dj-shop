@@ -54,7 +54,7 @@ class Playlist extends Component {
           <Breadcrumbs />
           <h1>{playlist.name}</h1>
           { loadingTracks && (
-            <h3 className='padding--sides--m bigger'>
+            <h3 className='padding--sides--m'>
               Loading tracks…
             </h3>
           ) }

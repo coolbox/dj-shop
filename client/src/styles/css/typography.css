@@ -35,13 +35,6 @@ h4 {
   margin: 0;
 }
 
-h3 {
-  font-size: 0.9em;
-}
-h3.bigger {
-  font-size: 1em;
-}
-
 h4 {
   font-size: 1.2em;
   line-height: 135%;
@@ -72,9 +65,10 @@ a.pill {
   background-color: #1db954;
   border-radius: 20px;
   border: 1px solid #1db954;
-  padding: 10px 28px;
+  padding: 12px 28px;
   font-size: 90%;
   color: #fff;
+  display: inline-block;
 }
 a.pill:hover {
   background-color: #1ed760;

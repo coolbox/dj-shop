@@ -1,5 +1,19 @@
 @import 'variables';
+// Font-families
+.font--family-1 {
+  font-family: 'Poppins', sans-serif;
+}
 
+// Font size
+.font-size--md {
+  font-size: 1.4em;
+}
+
+.font-size--lg {
+  font-size: 1.6em;
+}
+
+// Colors
 .color--jumbo {
   color: $jumbo;
 }
@@ -20,6 +34,16 @@
   background-color: $black;
 }
 
-.margin-bottom--lg {
+// Margins
+.margin-bottom--md {
   margin-bottom: 20px;
+}
+
+.margin-bottom--lg {
+  margin-bottom: 30px;
+}
+
+// Text alignment
+.text--center {
+  text-align: center;
 }

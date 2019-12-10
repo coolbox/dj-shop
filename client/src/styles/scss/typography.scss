@@ -40,13 +40,7 @@ h4 {
   margin: 0;
 }
 
-h3 {
-  font-size: 0.9em;
-
-  &.bigger {
-    font-size: 1em;
-  }
-}
+h3 {}
 
 h4 {
   font-size: 1.2em;
@@ -80,9 +74,10 @@ a {
     background-color: $mountain-meadow;
     border-radius: 20px;
     border: 1px solid $mountain-meadow;
-    padding: 10px 28px;
+    padding: 12px 28px;
     font-size: 90%;
     color: $white;
+    display: inline-block;
 
     &:hover {
       background-color: $malachite;
