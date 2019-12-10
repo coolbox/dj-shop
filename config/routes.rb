@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     scope "/v1" do
       resources :login, only: [:new], defaults: { format: :json }
       resources :playlists, only: [:index, :show], defaults: { format: :json }
-      resources :clicks, only: [:create], defaults: { format: :json }
+      resources :clicks, only: [:index, :create], defaults: { format: :json }
     end
   end
 

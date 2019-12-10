@@ -2,12 +2,44 @@ import React, { Component } from 'react';
 import { Layout } from 'components/layout';
 
 class Home extends Component {
+  constructor () {
+    super()
+    this.state = {
+      recentTracks: null
+    }
+  }
+
   componentDidMount () {
+    this.getRecentTracks()
+
     let vid = document.getElementById("heroVid");
     vid.playbackRate = 0.7;
   }
 
+  fetch (endpoint) {
+    const headers =  {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+
+    return window.fetch(endpoint, {
+        method: 'GET',
+        headers: headers
+      })
+      .then(response => response.json())
+      .catch(error => console.log(error))
+  }
+
+  getRecentTracks () {
+    this.fetch('/api/v1/clicks/')
+      .then(recentTracks => {
+        this.setState({recentTracks: recentTracks})
+      })
+  }
+
   render() {
+    const recentTracks = this.state.recentTracks
+
     return (
       <div>
         <div className='hero'>
@@ -48,28 +80,20 @@ class Home extends Component {
             Recently purchased
           </h3>
           <div className="carousel-wrap">
-            <ul className="carousel margin-bottom--lg">
-              <li className="carousel-card">
-                <img src='/images/album-test.jpg' alt='Album artwork' />
-                <h4>Hello World</h4>
-                <p>Foo bar</p>
-              </li>
-              <li className="carousel-card">
-                <img src='/images/album-test.jpg' alt='Album artwork' />
-                <h4>Hello World</h4>
-                <p>Foo bar</p>
-              </li>
-              <li className="carousel-card">
-                <img src='/images/album-test.jpg' alt='Album artwork' />
-                <h4>Hello World</h4>
-                <p>Foo bar</p>
-              </li>
-              <li className="carousel-card">
-                <img src='/images/album-test.jpg' alt='Album artwork' />
-                <h4>Hello World</h4>
-                <p>Foo bar</p>
-              </li>
-            </ul>
+            { recentTracks && (
+              <ul className="carousel margin-bottom--lg">
+                {recentTracks.map((trackObject, index) => (
+                  <li className="carousel-card">
+                    <img
+                      src={trackObject.album_image}
+                      alt={`${trackObject.name} - ${trackObject.artist_names} artwork`}
+                    />
+                    <h4>{trackObject.name}</h4>
+                    <p>{trackObject.artist_names}</p>
+                  </li>
+                ))}
+              </ul>
+            ) }
           </div>
           <a
             href='/'
