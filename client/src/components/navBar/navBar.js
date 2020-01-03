@@ -74,36 +74,36 @@ class NavBar extends Component {
 
   render () {
     return (
-      <div>
-        <header>
-          <Menu
-            pageWrapId={'page-wrap'}
-            outerContainerId={'outer-container'}
-            customBurgerIcon={ <img src='/icons/menu.svg' alt='Menu'/> }
-            customCrossIcon={ <img src='/icons/x.svg' alt='CLose menu' /> }
-          >
-            <ul>
-              {
-                this.state.menuItems.map(function(menuItem, index){
-                  return(
-                    <li key={index}>
-                      <span role='img' aria-label={menuItem.emojiLabel}>{menuItem.emoji}</span> <Link to={menuItem.path}>{menuItem.label}</Link>
-                    </li>
-                  )
-                })
-              }
-            </ul>
-          </Menu>
-          <div className='logo-holder'>
-            <a href='/' title='Cue - Home'>
-              <div className='logo'>
-                <div className='logo-shape'></div>
-                <span>Cue</span>
-              </div>
-            </a>
-          </div>
-        </header>
-      </div>
+      <header>
+        <Menu
+          right
+          width={ '90%' }
+          pageWrapId={'page-wrap'}
+          outerContainerId={'outer-container'}
+          customBurgerIcon={ <img src='/icons/menu.svg' alt='Menu'/> }
+          customCrossIcon={ <img src='/icons/x.svg' alt='Close menu' /> }
+        >
+          <ul>
+            {
+              this.state.menuItems.map(function(menuItem, index){
+                return(
+                  <li key={index}>
+                    <span role='img' aria-label={menuItem.emojiLabel}>{menuItem.emoji}</span> <Link to={menuItem.path}>{menuItem.label}</Link>
+                  </li>
+                )
+              })
+            }
+          </ul>
+        </Menu>
+        <div className='logo-holder'>
+          <a href='/' title='Cue - Home'>
+            <div className='logo'>
+              <div className='logo-shape'></div>
+              <span>Cue</span>
+            </div>
+          </a>
+        </div>
+      </header>
     )
   }
 }
