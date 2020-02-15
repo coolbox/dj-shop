@@ -9,7 +9,12 @@ export default class AuthHelperMethods {
 
   login = () => {
     // Get a token from api server using the fetch api
-    return this.fetch(`/api/v1/login/new`);
+    // return this.fetch(`/api/v1/login/new`);
+
+    return this.fetch(`/api/v1/login/new`).then(res => {
+      this.setToken(res.token); // Setting the token in localStorage
+      return Promise.resolve(res);
+    });
   };
 
   loggedIn = () => {
@@ -42,10 +47,8 @@ export default class AuthHelperMethods {
   };
 
   logout = () => {
-    console.log("Logging out")
     // Clear user token and profile data from localStorage
     localStorage.removeItem("id_token");
-    console.log("Token: ", this.getToken())
   };
 
   getConfirm = () => {

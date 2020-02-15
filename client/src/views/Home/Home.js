@@ -83,7 +83,7 @@ class Home extends Component {
             { recentTracks && (
               <ul className="carousel margin-bottom--lg">
                 {recentTracks.map((trackObject, index) => (
-                  <li className="carousel-card">
+                  <li className="carousel-card" key={index}>
                     <img
                       src={trackObject.album_image}
                       alt={`${trackObject.name} - ${trackObject.artist_names} artwork`}

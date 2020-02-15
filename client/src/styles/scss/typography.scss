@@ -40,8 +40,6 @@ h4 {
   margin: 0;
 }
 
-h3 {}
-
 h4 {
   font-size: 1.2em;
   line-height: 135%;
@@ -59,15 +57,15 @@ p {
   }
 }
 
-a {
+a, button {
   color: $mountain-meadow;
   font-family: 'Karla', sans-serif;
   text-decoration: none;
 
   &:hover {
     color: $malachite;
-    text-decoration: none;
     cursor: pointer;
+    text-decoration: none;
   }
 
   &.pill {

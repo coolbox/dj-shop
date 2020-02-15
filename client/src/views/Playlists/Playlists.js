@@ -33,13 +33,25 @@ class Playlists extends Component {
         method: 'GET',
         headers: headers
       })
-      .then(response => response.json())
-      .catch(error => console.log('Error: ', error))
+      .then(response => {
+        return Promise.resolve(response.json());
+      })
+      .catch(error => {
+        return console.log('Error: ', error)
+      })
+
+    // return window.fetch(endpoint, {
+    //     method: 'GET',
+    //     headers: headers
+    //   })
+    //   .then(response => response.json())
+    //   .catch(error => console.log('Error: ', error))
   }
 
   getPlaylists (offset) {
     this.fetch('/api/v1/playlists?offset=' + offset)
       .then(response => {
+        // debugger;
         this.setState({
           offset: response.offset,
           limit: response.limit,

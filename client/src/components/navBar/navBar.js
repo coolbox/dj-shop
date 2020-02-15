@@ -36,7 +36,8 @@ class NavBar extends Component {
             emoji: '👋',
             emojiLabel: 'waving hand',
             path: '/logout',
-            label: 'Log out'
+            label: 'Log out',
+            onClick: this.handleLogout
           }
         ]
       })
@@ -88,7 +89,13 @@ class NavBar extends Component {
               this.state.menuItems.map(function(menuItem, index){
                 return(
                   <li key={index}>
-                    <span role='img' aria-label={menuItem.emojiLabel}>{menuItem.emoji}</span> <Link to={menuItem.path}>{menuItem.label}</Link>
+                    { menuItem.label === 'Log out' && (
+                      // <div>{this.logOutButton}</div>
+                      <div><span role='img' aria-label={menuItem.emojiLabel}>{menuItem.emoji}</span> <Link to='' onClick={menuItem.onClick}>{menuItem.label}</Link></div>
+                    )}
+                    { menuItem.label !== 'Log out' && (
+                      <div><span role='img' aria-label={menuItem.emojiLabel}>{menuItem.emoji}</span> <Link to={menuItem.path}>{menuItem.label}</Link></div>
+                    )}
                   </li>
                 )
               })

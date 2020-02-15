@@ -13,12 +13,22 @@ export default function withAuth(AuthComponent) {
 
   return withRouter(
     class extends Component {
-      state = {
-        confirm: null,
-        token: qs.parse(this.props.location.search, {
-          ignoreQueryPrefix: true
-        }).token || null
-      };
+      constructor(props) {
+        super(props);
+
+        this.state = {
+          confirm: null
+        };
+
+        // Set the login token, if it's in the URL path
+        if(this.props.location.search !== null){
+          Auth.setToken(
+            qs.parse(this.props.location.search, {
+              ignoreQueryPrefix: true
+            }).token
+          )
+        }
+      }
 
       /*
         In the componentDidMount, we would want to do a couple of
@@ -26,10 +36,6 @@ export default function withAuth(AuthComponent) {
         prior to granting them enterance into the app.
       */
       componentDidMount() {
-        if (this.state.token !== null) {
-          Auth.setToken(this.state.token)
-        }
-
         // Is it a route that should be authenticated?
         if(this.props.authenticate === true){
           if (!Auth.loggedIn()) {
@@ -43,7 +49,10 @@ export default function withAuth(AuthComponent) {
                 confirm: confirm
               });
             } catch (err) {
-              /* Oh snap! Looks like there's an error so we'll print it out and log the user out for security reasons. */
+              /*
+                Oh snap! Looks like there's an error so we'll print it out
+                and log the user out for security reasons.
+              */
               console.log(err);
               Auth.logout();
               this.props.history.replace("/login");

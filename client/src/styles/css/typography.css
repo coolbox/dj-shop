@@ -51,17 +51,17 @@ p:last-child {
   margin: 0;
 }
 
-a {
+a, button {
   color: #1db954;
   font-family: "Karla", sans-serif;
   text-decoration: none;
 }
-a:hover {
+a:hover, button:hover {
   color: #1ed760;
-  text-decoration: none;
   cursor: pointer;
+  text-decoration: none;
 }
-a.pill {
+a.pill, button.pill {
   background-color: #1db954;
   border-radius: 20px;
   border: 1px solid #1db954;
@@ -70,7 +70,7 @@ a.pill {
   color: #fff;
   display: inline-block;
 }
-a.pill:hover {
+a.pill:hover, button.pill:hover {
   background-color: #1ed760;
 }
 

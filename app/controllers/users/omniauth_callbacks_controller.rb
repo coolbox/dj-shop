@@ -11,7 +11,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     jwt = Auth.encode_uid(@user.uid)
     # sign_in_and_redirect(@user, event: :authentication)
     sign_in(@user)
-    redirect_to(ENV["CLIENT_URL"] + "?token=#{jwt}")
+    redirect_to(ENV["CLIENT_URL"] + "playlists?token=#{jwt}")
   end
 
   def failure

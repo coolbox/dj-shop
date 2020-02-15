@@ -5,9 +5,11 @@ class Login extends Component {
   render() {
     return (
       <div className='wrapper--vertical'>
-        <h1>Login</h1>
+        <h1>Login with Spotify</h1>
         <form>
           <button
+            className="pill"
+            title='Log in'
             formAction="http://localhost:5100/api/v1/login/new">
             Log in
           </button>
