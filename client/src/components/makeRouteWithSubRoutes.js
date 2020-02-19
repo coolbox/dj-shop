@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Route } from "react-router-dom";
 
+import WithAnalytics from 'components/withAnalytics';
+
 class MakeRouteWithSubRoutes extends Component {
   render() {
     let route = this.props;
@@ -16,4 +18,4 @@ class MakeRouteWithSubRoutes extends Component {
   }
 }
 
-export default MakeRouteWithSubRoutes;
+export default WithAnalytics(MakeRouteWithSubRoutes);

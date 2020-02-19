@@ -21,9 +21,10 @@ export default function withAuth(AuthComponent) {
         };
 
         // Set the login token, if it's in the URL path
-        if(this.props.location.search !== null){
+        const tokenParam = this.props.location.search
+        if(tokenParam !== null && tokenParam !== ''){
           Auth.setToken(
-            qs.parse(this.props.location.search, {
+            qs.parse(tokenParam, {
               ignoreQueryPrefix: true
             }).token
           )
