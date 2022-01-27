@@ -79,4 +79,4 @@ end
 
 # Other gems
 gem "httparty", "~> 0.17.0"
-gem "sidekiq", "~> 5.2.7"
+gem "sidekiq", "~> 6.4.0"
