@@ -78,5 +78,5 @@ end
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Other gems
-gem "httparty", "~> 0.17.0"
+gem "httparty", "~> 0.21.0"
 gem "sidekiq", "~> 5.2.7"
